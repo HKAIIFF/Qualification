@@ -563,6 +563,67 @@
             position: relative;
             z-index: 10;
         }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .lang-switcher-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .lang-switcher-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .lang-switcher-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 0;
+            margin-top: 5px;
+            min-width: 120px;
+            display: none;
+            z-index: 100;
+        }
+        
+        .lang-switcher-menu.active {
+            display: block;
+        }
+        
+        .lang-option {
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .lang-option.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .zh-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -595,16 +656,40 @@
                 <div class="logo-font">HKAIIFF</div>
             </a>
             <div class="hidden md:flex space-x-8 desktop-nav">
-                <a href="#home" class="hover:text-blue-400 transition">Home</a>
-                <a href="#ecosystem" class="hover:text-blue-400 transition">Ecosystem</a>
-                <a href="#festival" class="hover:text-blue-400 transition">Film Festival</a>
-                <a href="#academy" class="hover:text-blue-400 transition">Academy</a>
-                <a href="#market" class="hover:text-blue-400 transition">Market</a>
-                <a href="#center" class="hover:text-blue-400 transition">Submission Center</a>
-                <a href="#certificates" class="hover:text-blue-400 transition">Certificates</a>
+                <a href="#home" class="hover:text-blue-400 transition en-content">Home</a>
+                <a href="#home" class="hover:text-blue-400 transition zh-content" style="display: none;">首頁</a>
+                <a href="#ecosystem" class="hover:text-blue-400 transition en-content">Ecosystem</a>
+                <a href="#ecosystem" class="hover:text-blue-400 transition zh-content" style="display: none;">生態系統</a>
+                <a href="#festival" class="hover:text-blue-400 transition en-content">Film Festival</a>
+                <a href="#festival" class="hover:text-blue-400 transition zh-content" style="display: none;">電影節</a>
+                <a href="#academy" class="hover:text-blue-400 transition en-content">Academy</a>
+                <a href="#academy" class="hover:text-blue-400 transition zh-content" style="display: none;">學院</a>
+                <a href="#market" class="hover:text-blue-400 transition en-content">Market</a>
+                <a href="#market" class="hover:text-blue-400 transition zh-content" style="display: none;">市場</a>
+                <a href="#center" class="hover:text-blue-400 transition en-content">Submission Center</a>
+                <a href="#center" class="hover:text-blue-400 transition zh-content" style="display: none;">提交中心</a>
+                <a href="#certificates" class="hover:text-blue-400 transition en-content">Certificates</a>
+                <a href="#certificates" class="hover:text-blue-400 transition zh-content" style="display: none;">證書</a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm">Contact Us</a>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-btn">
+                        <i class="fas fa-globe"></i>
+                        <span class="en-content">English</span>
+                        <span class="zh-content" style="display: none;">English</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="lang-switcher-menu">
+                        <div class="lang-option active" data-lang="en">
+                            <span>English</span>
+                        </div>
+                        <div class="lang-option" data-lang="zh">
+                            <span>繁體中文</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm en-content">Contact Us</a>
+                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm zh-content" style="display: none;">聯絡我們</a>
                 
                 <button class="md:hidden text-white mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
@@ -620,13 +705,20 @@
         </div>
         
         <div class="mt-12 flex flex-col space-y-6">
-            <a href="#home" class="text-xl hover:text-blue-400 transition">Home</a>
-            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition">Ecosystem</a>
-            <a href="#festival" class="text-xl hover:text-blue-400 transition">Film Festival</a>
-            <a href="#academy" class="text-xl hover:text-blue-400 transition">Academy</a>
-            <a href="#market" class="text-xl hover:text-blue-400 transition">Market</a>
-            <a href="#center" class="text-xl hover:text-blue-400 transition">Submission Center</a>
-            <a href="#certificates" class="text-xl hover:text-blue-400 transition">Certificates</a>
+            <a href="#home" class="text-xl hover:text-blue-400 transition en-content">Home</a>
+            <a href="#home" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">首頁</a>
+            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition en-content">Ecosystem</a>
+            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">生態系統</a>
+            <a href="#festival" class="text-xl hover:text-blue-400 transition en-content">Film Festival</a>
+            <a href="#festival" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">電影節</a>
+            <a href="#academy" class="text-xl hover:text-blue-400 transition en-content">Academy</a>
+            <a href="#academy" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">學院</a>
+            <a href="#market" class="text-xl hover:text-blue-400 transition en-content">Market</a>
+            <a href="#market" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">市場</a>
+            <a href="#center" class="text-xl hover:text-blue-400 transition en-content">Submission Center</a>
+            <a href="#center" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">提交中心</a>
+            <a href="#certificates" class="text-xl hover:text-blue-400 transition en-content">Certificates</a>
+            <a href="#certificates" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">證書</a>
         </div>
     </div>
 
@@ -634,16 +726,26 @@
     <section id="home" class="relative min-h-screen flex items-center pt-20">
         <div class="container mx-auto px-4 hero-content">
             <div class="max-w-4xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Hong Kong Artificial Intelligence<span class="gradient-text"> International Film Festival</span></h1>
-                <p class="text-xl text-gray-300 mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 en-content">Hong Kong Artificial Intelligence<span class="gradient-text"> International Film Festival</span></h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 zh-content" style="display: none;">香港人工智能<span class="gradient-text">國際電影節</span></h1>
+                <p class="text-xl text-gray-300 mb-8 en-content">
                     Redefining film art and evaluation standards in the AI era. A revolutionary ecosystem integrating artificial intelligence with traditional filmmaking processes to create new paradigms for global cinema innovation.
                 </p>
+                <p class="text-xl text-gray-300 mb-8 zh-content" style="display: none;">
+                    在AI時代重新定義電影藝術與評價標準。革命性的生態系統，將人工智能與傳統電影製作流程相結合，為全球電影創新創造新範式。
+                </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center">
+                    <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center en-content">
                         Explore Ecosystem
                     </a>
-                    <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center">
+                    <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center zh-content" style="display: none;">
+                        探索生態系統
+                    </a>
+                    <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center en-content">
                         View Certificates
+                    </a>
+                    <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center zh-content" style="display: none;">
+                        查看證書
                     </a>
                 </div>
             </div>
@@ -654,9 +756,13 @@
     <section id="ecosystem" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Complete AI Film Ecosystem</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Complete AI Film Ecosystem</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">完整AI電影生態系統</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Four interconnected platforms collaborating to revolutionize the film industry through AI innovation, blockchain technology, and global collaboration.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    四個相互連接的平台，通過AI創新、區塊鏈技術和全球合作，共同革新電影產業。
                 </p>
             </div>
             
@@ -666,11 +772,16 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-blue-400">Film Festival</h3>
-                    <p class="text-gray-300 text-sm mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-blue-400 en-content">Film Festival</h3>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400 zh-content" style="display: none;">電影節</h3>
+                    <p class="text-gray-300 text-sm mb-4 en-content">
                         Global competition platform for AI-native films with innovative evaluation standards and mixed reality award ceremonies.
                     </p>
-                    <a href="#festival" class="text-accent hover:text-white text-sm font-medium">Learn more →</a>
+                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                        面向AI原生電影的全球競賽平台，具有創新評價標準和混合現實頒獎典禮。
+                    </p>
+                    <a href="#festival" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
+                    <a href="#festival" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
                 </div>
                 
                 <!-- Academy Component -->
@@ -678,11 +789,16 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-purple-400">AI Film Academy</h3>
-                    <p class="text-gray-300 text-sm mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-purple-400 en-content">AI Film Academy</h3>
+                    <h3 class="text-xl font-bold mb-3 text-purple-400 zh-content" style="display: none;">AI電影學院</h3>
+                    <p class="text-gray-300 text-sm mb-4 en-content">
                         Educational platform offering comprehensive courses in AI filmmaking, blockchain technology, and creative innovation.
                     </p>
-                    <a href="#academy" class="text-accent hover:text-white text-sm font-medium">Learn more →</a>
+                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                        提供AI電影製作、區塊鏈技術和創意創新全面課程的教育平台。
+                    </p>
+                    <a href="#academy" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
+                    <a href="#academy" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
                 </div>
                 
                 <!-- Market Component -->
@@ -690,11 +806,16 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-green-400">AI Film Market</h3>
-                    <p class="text-gray-300 text-sm mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-green-400 en-content">AI Film Market</h3>
+                    <h3 class="text-xl font-bold mb-3 text-green-400 zh-content" style="display: none;">AI電影市場</h3>
+                    <p class="text-gray-300 text-sm mb-4 en-content">
                         Blockchain-based marketplace for film financing, production, distribution, and revenue sharing via smart contracts.
                     </p>
-                    <a href="#market" class="text-accent hover:text-white text-sm font-medium">Learn more →</a>
+                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                        基於區塊鏈的電影融資、製作、發行和通過智能合約進行收入分享的市場。
+                    </p>
+                    <a href="#market" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
+                    <a href="#market" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
                 </div>
                 
                 <!-- Submission Center Component -->
@@ -702,11 +823,16 @@
                     <div class="ecosystem-icon">
                         <i class="fas fa-upload"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-orange-400">Submission Center</h3>
-                    <p class="text-gray-300 text-sm mb-4">
+                    <h3 class="text-xl font-bold mb-3 text-orange-400 en-content">Submission Center</h3>
+                    <h3 class="text-xl font-bold mb-3 text-orange-400 zh-content" style="display: none;">提交中心</h3>
+                    <p class="text-gray-300 text-sm mb-4 en-content">
                         Global hub for AI-native content collection and distribution, connecting creators with worldwide audiences.
                     </p>
-                    <a href="#center" class="text-accent hover:text-white text-sm font-medium">Learn more →</a>
+                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                        AI原生內容收集和分發的全球中心，將創作者與全球觀眾連接起來。
+                    </p>
+                    <a href="#center" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
+                    <a href="#center" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
                 </div>
             </div>
         </div>
@@ -716,85 +842,110 @@
     <section id="festival" class="py-20 bg-gray-900 bg-opacity-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Hong Kong AI International Film Festival</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI International Film Festival</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI國際電影節</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     The world's first film festival dedicated exclusively to AI-native film production, establishing new standards for the era of AI cinema.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    世界上第一個專門致力於AI原生電影製作的電影節，為AI電影時代建立新標準。
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">🎬 Revolutionary Approach</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🎬 Revolutionary Approach</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🎬 革命性方法</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-robot"></i>
                             </div>
-                            <h4 class="font-bold mb-2">AI-Native Focus</h4>
-                            <p class="text-sm text-gray-300">Dedicated to films created with AI as a core creative tool, not just a production aid.</p>
+                            <h4 class="font-bold mb-2 en-content">AI-Native Focus</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI原生專注</h4>
+                            <p class="text-sm text-gray-300 en-content">Dedicated to films created with AI as a core creative tool, not just a production aid.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">專注於將AI作為核心創意工具而非僅僅是製作輔助的電影。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-cube"></i>
                             </div>
-                            <h4 class="font-bold mb-2">New Classification System</h4>
-                            <p class="text-sm text-gray-300">Innovative categories including AI-generated films, human-machine collaborations, and interactive AI experiences.</p>
+                            <h4 class="font-bold mb-2 en-content">New Classification System</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">新分類系統</h4>
+                            <p class="text-sm text-gray-300 en-content">Innovative categories including AI-generated films, human-machine collaborations, and interactive AI experiences.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">創新類別包括AI生成電影、人機協作和互動AI體驗。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Advanced Evaluation Criteria</h4>
-                            <p class="text-sm text-gray-300">Multidimensional assessment covering technological innovation, artistic achievement, and ethical considerations.</p>
+                            <h4 class="font-bold mb-2 en-content">Advanced Evaluation Criteria</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">高級評價標準</h4>
+                            <p class="text-sm text-gray-300 en-content">Multidimensional assessment covering technological innovation, artistic achievement, and ethical considerations.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">多維度評估，涵蓋技術創新、藝術成就和倫理考量。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400">🏆 Award Categories & Innovation</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🏆 Award Categories & Innovation</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🏆 獎項類別與創新</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-award"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Grand Prize Categories</h4>
-                            <p class="text-sm text-gray-300">Best AI-Generated Film, Best Human-Machine Collaboration, Technological Innovation Award, Ethical AI Achievement Award.</p>
+                            <h4 class="font-bold mb-2 en-content">Grand Prize Categories</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">大獎類別</h4>
+                            <p class="text-sm text-gray-300 en-content">Best AI-Generated Film, Best Human-Machine Collaboration, Technological Innovation Award, Ethical AI Achievement Award.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">最佳AI生成電影、最佳人機協作、技術創新獎、倫理AI成就獎。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-vr-cardboard"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Mixed Reality Ceremony</h4>
-                            <p class="text-sm text-gray-300">World's first mixed reality award ceremony combining physical venues with virtual spaces for global participation.</p>
+                            <h4 class="font-bold mb-2 en-content">Mixed Reality Ceremony</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">混合現實典禮</h4>
+                            <p class="text-sm text-gray-300 en-content">World's first mixed reality award ceremony combining physical venues with virtual spaces for global participation.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">世界首個混合現實頒獎典禮，將實體場館與虛擬空間結合，實現全球參與。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-globe"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Global Impact</h4>
-                            <p class="text-sm text-gray-300">Multicultural jury and global streaming capabilities ensuring international recognition and accessibility.</p>
+                            <h4 class="font-bold mb-2 en-content">Global Impact</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">全球影響</h4>
+                            <p class="text-sm text-gray-300 en-content">Multicultural jury and global streaming capabilities ensuring international recognition and accessibility.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">多元文化評審團和全球流媒體能力，確保國際認可和可訪問性。</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="card p-8">
-                <h3 class="text-2xl font-bold mb-6 text-green-400">🎯 Core Values & Purpose</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">🎯 Core Values & Purpose</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">🎯 核心價值與目的</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="text-center">
                         <i class="fas fa-lightbulb text-4xl text-blue-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Innovation Recognition</h4>
-                        <p class="text-sm text-gray-300">Celebrate groundbreaking AI filmmaking techniques and creative breakthroughs pushing the boundaries of cinematic art.</p>
+                        <h4 class="font-bold mb-2 en-content">Innovation Recognition</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創新認可</h4>
+                        <p class="text-sm text-gray-300 en-content">Celebrate groundbreaking AI filmmaking techniques and creative breakthroughs pushing the boundaries of cinematic art.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">慶祝突破性的AI電影製作技術和創意突破，推動電影藝術的邊界。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-users text-4xl text-purple-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Community Building</h4>
-                        <p class="text-sm text-gray-300">Foster a global community of AI filmmakers, technologists, and artists collectively pioneering cinema's future.</p>
+                        <h4 class="font-bold mb-2 en-content">Community Building</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">社區建設</h4>
+                        <p class="text-sm text-gray-300 en-content">Foster a global community of AI filmmakers, technologists, and artists collectively pioneering cinema's future.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">培養全球AI電影製作者、技術專家和藝術家社區，共同開創電影的未來。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-rocket text-4xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Industry Evolution</h4>
-                        <p class="text-sm text-gray-300">Drive transformation of the film industry through AI applications, establishing new standards for creative excellence.</p>
+                        <h4 class="font-bold mb-2 en-content">Industry Evolution</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">產業演進</h4>
+                        <p class="text-sm text-gray-300 en-content">Drive transformation of the film industry through AI applications, establishing new standards for creative excellence.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">通過AI應用推動電影產業轉型，為創意卓越建立新標準。</p>
                     </div>
                 </div>
             </div>
@@ -805,90 +956,117 @@
     <section id="academy" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Hong Kong AI Film Academy</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI Film Academy</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI電影學院</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     The world's first comprehensive educational platform dedicated to AI filmmaking and blockchain technology for creative industries.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    世界上第一個致力於AI電影製作和創意產業區塊鏈技術的綜合教育平台。
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">📚 Educational Excellence</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">📚 Educational Excellence</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">📚 教育卓越</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
-                            <h4 class="font-bold mb-2">AI Filmmaking Mastery</h4>
-                            <p class="text-sm text-gray-300">Comprehensive curriculum covering AI tools, techniques, and creative processes for next-generation filmmaking.</p>
+                            <h4 class="font-bold mb-2 en-content">AI Filmmaking Mastery</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI電影製作精通</h4>
+                            <p class="text-sm text-gray-300 en-content">Comprehensive curriculum covering AI tools, techniques, and creative processes for next-generation filmmaking.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">全面課程涵蓋AI工具、技術和創意流程，用於下一代電影製作。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-link"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Blockchain Integration</h4>
-                            <p class="text-sm text-gray-300">Learn how blockchain technology revolutionizes film financing, distribution, and rights management.</p>
+                            <h4 class="font-bold mb-2 en-content">Blockchain Integration</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">區塊鏈整合</h4>
+                            <p class="text-sm text-gray-300 en-content">Learn how blockchain technology revolutionizes film financing, distribution, and rights management.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">學習區塊鏈技術如何革新電影融資、發行和權利管理。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-certificate"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Industry Certification</h4>
-                            <p class="text-sm text-gray-300">Globally recognized certificates and credentials for AI film professionals and creative technologists.</p>
+                            <h4 class="font-bold mb-2 en-content">Industry Certification</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">行業認證</h4>
+                            <p class="text-sm text-gray-300 en-content">Globally recognized certificates and credentials for AI film professionals and creative technologists.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">為AI電影專業人士和創意技術專家提供全球認可的證書和資格。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400">🎓 Learning Pathways</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🎓 Learning Pathways</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🎓 學習路徑</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-play-circle"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Beginner to Expert</h4>
-                            <p class="text-sm text-gray-300">Structured learning paths from foundational AI concepts to advanced filmmaking techniques and industry applications.</p>
+                            <h4 class="font-bold mb-2 en-content">Beginner to Expert</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">從初學者到專家</h4>
+                            <p class="text-sm text-gray-300 en-content">Structured learning paths from foundational AI concepts to advanced filmmaking techniques and industry applications.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">從基礎AI概念到高級電影製作技術和行業應用的結構化學習路徑。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Hands-On Projects</h4>
-                            <p class="text-sm text-gray-300">Real-world filmmaking projects using cutting-edge AI tools and blockchain platforms.</p>
+                            <h4 class="font-bold mb-2 en-content">Hands-On Projects</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">實踐項目</h4>
+                            <p class="text-sm text-gray-300 en-content">Real-world filmmaking projects using cutting-edge AI tools and blockchain platforms.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">使用尖端AI工具和區塊鏈平台的實際電影製作項目。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-network-wired"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Industry Networking</h4>
-                            <p class="text-sm text-gray-300">Connect with filmmakers, technologists, and industry professionals through collaborative projects and events.</p>
+                            <h4 class="font-bold mb-2 en-content">Industry Networking</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">行業網絡</h4>
+                            <p class="text-sm text-gray-300 en-content">Connect with filmmakers, technologists, and industry professionals through collaborative projects and events.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">通過合作項目和活動與電影製作者、技術專家和行業專業人士建立聯繫。</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="card p-8">
-                <h3 class="text-2xl font-bold mb-6 text-green-400">🎯 Core Functions & Value</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">🎯 Core Functions & Value</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">🎯 核心功能與價值</h3>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <i class="fas fa-user-graduate text-4xl text-blue-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Talent Development</h4>
-                        <p class="text-sm text-gray-300">Primary source of skilled professionals for the entire AI film ecosystem.</p>
+                        <h4 class="font-bold mb-2 en-content">Talent Development</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">人才培養</h4>
+                        <p class="text-sm text-gray-300 en-content">Primary source of skilled professionals for the entire AI film ecosystem.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為整個AI電影生態系統提供熟練專業人才的主要來源。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-flask text-4xl text-purple-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Innovation Hub</h4>
-                        <p class="text-sm text-gray-300">Research and development center driving technological and creative breakthroughs.</p>
+                        <h4 class="font-bold mb-2 en-content">Innovation Hub</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創新中心</h4>
+                        <p class="text-sm text-gray-300 en-content">Research and development center driving technological and creative breakthroughs.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">推動技術和創意突破的研究與開發中心。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-database text-4xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Knowledge Repository</h4>
-                        <p class="text-sm text-gray-300">Comprehensive resource library including AI filmmaking resources and best practices.</p>
+                        <h4 class="font-bold mb-2 en-content">Knowledge Repository</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">知識庫</h4>
+                        <p class="text-sm text-gray-300 en-content">Comprehensive resource library including AI filmmaking resources and best practices.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">全面的資源庫，包括AI電影製作資源和最佳實踐。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-globe-americas text-4xl text-orange-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Global Standards</h4>
-                        <p class="text-sm text-gray-300">Establishing global standards for AI film education and professional certification.</p>
+                        <h4 class="font-bold mb-2 en-content">Global Standards</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">全球標準</h4>
+                        <p class="text-sm text-gray-300 en-content">Establishing global standards for AI film education and professional certification.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為AI電影教育和專業認證建立全球標準。</p>
                     </div>
                 </div>
             </div>
@@ -899,85 +1077,110 @@
     <section id="market" class="py-20 bg-gray-900 bg-opacity-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Hong Kong AI Film Market</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI Film Market</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI電影市場</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Revolutionary blockchain platform integrating AI technology with traditional filmmaking processes to create a decentralized, transparent, and efficient global film ecosystem.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    革命性的區塊鏈平台，將AI技術與傳統電影製作流程相結合，創建去中心化、透明和高效的全球電影生態系統。
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">🔗 Blockchain Innovation</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🔗 Blockchain Innovation</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🔗 區塊鏈創新</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-coins"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Smart Contract Financing</h4>
-                            <p class="text-sm text-gray-300">Automated, transparent financing mechanisms ensuring fair allocation of resources and profits.</p>
+                            <h4 class="font-bold mb-2 en-content">Smart Contract Financing</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">智能合約融資</h4>
+                            <p class="text-sm text-gray-300 en-content">Automated, transparent financing mechanisms ensuring fair allocation of resources and profits.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">自動化、透明的融資機制，確保資源和利潤的公平分配。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Copyright Protection</h4>
-                            <p class="text-sm text-gray-300">Immutable blockchain records securing ownership and licensing of creative assets.</p>
+                            <h4 class="font-bold mb-2 en-content">Copyright Protection</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">版權保護</h4>
+                            <p class="text-sm text-gray-300 en-content">Immutable blockchain records securing ownership and licensing of creative assets.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">不可變的區塊鏈記錄，保護創意資產的所有權和許可。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-chart-pie"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Transparent Revenue Sharing</h4>
-                            <p class="text-sm text-gray-300">Automated profit distribution based on predefined smart contracts and contribution tracking.</p>
+                            <h4 class="font-bold mb-2 en-content">Transparent Revenue Sharing</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">透明收入分享</h4>
+                            <p class="text-sm text-gray-300 en-content">Automated profit distribution based on predefined smart contracts and contribution tracking.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">基於預定義智能合約和貢獻跟踪的自動化利潤分配。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400">🎬 AI-Driven Production</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🎬 AI-Driven Production</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🎬 AI驅動製作</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-magic"></i>
                             </div>
-                            <h4 class="font-bold mb-2">AI Creation Tools</h4>
-                            <p class="text-sm text-gray-300">Integrated AI engines for script analysis, scene generation, character design, and post-production.</p>
+                            <h4 class="font-bold mb-2 en-content">AI Creation Tools</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI創作工具</h4>
+                            <p class="text-sm text-gray-300 en-content">Integrated AI engines for script analysis, scene generation, character design, and post-production.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">集成AI引擎，用於劇本分析、場景生成、角色設計和後期製作。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Automated Workflows</h4>
-                            <p class="text-sm text-gray-300">Streamlined production processes with AI-assisted project management and resource allocation.</p>
+                            <h4 class="font-bold mb-2 en-content">Automated Workflows</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">自動化工作流程</h4>
+                            <p class="text-sm text-gray-300 en-content">Streamlined production processes with AI-assisted project management and resource allocation.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">簡化的生產流程，具有AI輔助項目管理和資源分配。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-analytics"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Market Analysis</h4>
-                            <p class="text-sm text-gray-300">AI-powered market analysis and audience prediction for informed investment and distribution decisions.</p>
+                            <h4 class="font-bold mb-2 en-content">Market Analysis</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">市場分析</h4>
+                            <p class="text-sm text-gray-300 en-content">AI-powered market analysis and audience prediction for informed investment and distribution decisions.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">AI驅動的市場分析和觀眾預測，為投資和發行決策提供信息。</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="card p-8">
-                <h3 class="text-2xl font-bold mb-6 text-green-400">💰 Market Value & Opportunities</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">💰 Market Value & Opportunities</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">💰 市場價值與機會</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="text-center">
                         <i class="fas fa-dollar-sign text-4xl text-blue-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">$10B+ Market Potential</h4>
-                        <p class="text-sm text-gray-300">Targeting an emerging market valued at over $10 billion within 5 years through innovative solutions.</p>
+                        <h4 class="font-bold mb-2 en-content">$10B+ Market Potential</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">100億美元+市場潛力</h4>
+                        <p class="text-sm text-gray-300 en-content">Targeting an emerging market valued at over $10 billion within 5 years through innovative solutions.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">通過創新解決方案，目標在5年內瞄準價值超過100億美元的新興市場。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-handshake text-4xl text-purple-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Global Partnerships</h4>
-                        <p class="text-sm text-gray-300">Strategic alliances with global production companies, distributors, and technology providers.</p>
+                        <h4 class="font-bold mb-2 en-content">Global Partnerships</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">全球合作夥伴</h4>
+                        <p class="text-sm text-gray-300 en-content">Strategic alliances with global production companies, distributors, and technology providers.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">與全球製作公司、發行商和技術提供商的戰略聯盟。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-trending-up text-4xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Investment Hub</h4>
-                        <p class="text-sm text-gray-300">Connecting East-West markets as Hong Kong's innovation hub serving the global AI film industry.</p>
+                        <h4 class="font-bold mb-2 en-content">Investment Hub</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">投資中心</h4>
+                        <p class="text-sm text-gray-300 en-content">Connecting East-West markets as Hong Kong's innovation hub serving the global AI film industry.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">作為香港創新中心連接東西市場，服務全球AI電影產業。</p>
                     </div>
                 </div>
             </div>
@@ -988,90 +1191,117 @@
     <section id="center" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Hong Kong AI International Film Festival Submission Center</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI International Film Festival Submission Center</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI國際電影節提交中心</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Global hub for AI-native film content collection and distribution, creating a two-way value flow platform connecting creators with worldwide audiences.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    AI原生電影內容收集和分發的全球中心，創建連接創作者與全球觀眾的雙向價值流平台。
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400">🌐 Global Distribution Network</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🌐 Global Distribution Network</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🌐 全球分發網絡</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-upload"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Content Aggregation Hub</h4>
-                            <p class="text-sm text-gray-300">Centralized platform for discovering and curating high-quality AI-native film content from global creators.</p>
+                            <h4 class="font-bold mb-2 en-content">Content Aggregation Hub</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">內容聚合中心</h4>
+                            <p class="text-sm text-gray-300 en-content">Centralized platform for discovering and curating high-quality AI-native film content from global creators.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">集中平台，用於發現和策劃來自全球創作者的高質量AI原生電影內容。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-broadcast-tower"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Multi-Platform Distribution</h4>
-                            <p class="text-sm text-gray-300">Comprehensive distribution network covering multiple platforms, channels, and global markets.</p>
+                            <h4 class="font-bold mb-2 en-content">Multi-Platform Distribution</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">多平台分發</h4>
+                            <p class="text-sm text-gray-300 en-content">Comprehensive distribution network covering multiple platforms, channels, and global markets.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">全面的分發網絡，覆蓋多個平台、渠道和全球市場。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-language"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Cultural Adaptation</h4>
-                            <p class="text-sm text-gray-300">Localization services including translation, cultural adaptation, and regional market optimization.</p>
+                            <h4 class="font-bold mb-2 en-content">Cultural Adaptation</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">文化適應</h4>
+                            <p class="text-sm text-gray-300 en-content">Localization services including translation, cultural adaptation, and regional market optimization.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">本地化服務，包括翻譯、文化適應和區域市場優化。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400">🛠️ Professional Services</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🛠️ Professional Services</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🛠️ 專業服務</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-consultation"></i>
                             </div>
-                            <h4 class="font-bold mb-2">End-to-End Support</h4>
-                            <p class="text-sm text-gray-300">Comprehensive services from creation consultation to commercial distribution and revenue optimization.</p>
+                            <h4 class="font-bold mb-2 en-content">End-to-End Support</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">端到端支持</h4>
+                            <p class="text-sm text-gray-300 en-content">Comprehensive services from creation consultation to commercial distribution and revenue optimization.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">從創作諮詢到商業分發和收入優化的全面服務。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-copyright"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Rights Management</h4>
-                            <p class="text-sm text-gray-300">Advanced copyright protection, licensing services, and intellectual property management solutions.</p>
+                            <h4 class="font-bold mb-2 en-content">Rights Management</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">權利管理</h4>
+                            <p class="text-sm text-gray-300 en-content">Advanced copyright protection, licensing services, and intellectual property management solutions.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">高級版權保護、許可服務和知識產權管理解決方案。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-ticket-alt"></i>
                             </div>
-                            <h4 class="font-bold mb-2">Festival Integration</h4>
-                            <p class="text-sm text-gray-300">Simplified submission process for global film festivals and exhibition opportunities.</p>
+                            <h4 class="font-bold mb-2 en-content">Festival Integration</h4>
+                            <h4 class="font-bold mb-2 zh-content" style="display: none;">電影節整合</h4>
+                            <p class="text-sm text-gray-300 en-content">Simplified submission process for global film festivals and exhibition opportunities.</p>
+                            <p class="text-sm text-gray-300 zh-content" style="display: none;">簡化的全球電影節提交流程和展覽機會。</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="card p-8">
-                <h3 class="text-2xl font-bold mb-6 text-green-400">📈 Market Growth & Value Creation</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">📈 Market Growth & Value Creation</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">📈 市場增長與價值創造</h3>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">380% Market Growth</h4>
-                        <p class="text-sm text-gray-300">Global AI video market projected to grow from $61 million in 2024 to $380 million in 2025.</p>
+                        <h4 class="font-bold mb-2 en-content">380% Market Growth</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">380%市場增長</h4>
+                        <p class="text-sm text-gray-300 en-content">Global AI video market projected to grow from $61 million in 2024 to $380 million in 2025.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">全球AI視頻市場預計將從2024年的6100萬美元增長到2025年的3.8億美元。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-balance-scale text-4xl text-purple-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">8-10x ROI Target</h4>
-                        <p class="text-sm text-gray-300">Expected to achieve 8-10x return on investment within 10 years of operation.</p>
+                        <h4 class="font-bold mb-2 en-content">8-10x ROI Target</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">8-10倍投資回報目標</h4>
+                        <p class="text-sm text-gray-300 en-content">Expected to achieve 8-10x return on investment within 10 years of operation.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">預計在運營10年內實現8-10倍的投資回報。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-users text-4xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Creator Empowerment</h4>
-                        <p class="text-sm text-gray-300">Providing creators with global exposure, technical support, and diversified monetization models.</p>
+                        <h4 class="font-bold mb-2 en-content">Creator Empowerment</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創作者賦能</h4>
+                        <p class="text-sm text-gray-300 en-content">Providing creators with global exposure, technical support, and diversified monetization models.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為創作者提供全球曝光、技術支持和多元化的變現模式。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-eye text-4xl text-orange-400 mb-4"></i>
-                        <h4 class="font-bold mb-2">Audience Experience</h4>
-                        <p class="text-sm text-gray-300">High-quality curated content with personalized recommendations and interactive viewing experiences.</p>
+                        <h4 class="font-bold mb-2 en-content">Audience Experience</h4>
+                        <h4 class="font-bold mb-2 zh-content" style="display: none;">觀眾體驗</h4>
+                        <p class="text-sm text-gray-300 en-content">High-quality curated content with personalized recommendations and interactive viewing experiences.</p>
+                        <p class="text-sm text-gray-300 zh-content" style="display: none;">高質量策劃內容，具有個性化推薦和互動觀看體驗。</p>
                     </div>
                 </div>
             </div>
@@ -1082,38 +1312,48 @@
     <section id="certificates" class="py-20 bg-gray-900 bg-opacity-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Legal Documents & Certificates</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Legal Documents & Certificates</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">法律文件與證書</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Official incorporation and business registration certificates for the Hong Kong AI International Film Festival ecosystem.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    香港AI國際電影節生態系統的官方註冊和商業登記證書。
                 </p>
             </div>
             
             <!-- Certificate Overview -->
             <div class="card rounded-xl overflow-hidden cyber-border mb-12">
                 <div class="p-8">
-                    <h3 class="text-2xl font-bold mb-6">📋 Official Registration</h3>
+                    <h3 class="text-2xl font-bold mb-6 en-content">📋 Official Registration</h3>
+                    <h3 class="text-2xl font-bold mb-6 zh-content" style="display: none;">📋 官方註冊</h3>
                     <div class="grid grid-cols-1 gap-8">
                         <!-- Certificate Section -->
                         <div class="certificate-section">
-                            <h4 class="text-lg font-bold mb-4 text-blue-400">Certificate of Incorporation</h4>
+                            <h4 class="text-lg font-bold mb-4 text-blue-400 en-content">Certificate of Incorporation</h4>
+                            <h4 class="text-lg font-bold mb-4 text-blue-400 zh-content" style="display: none;">註冊證明書</h4>
                             
                             <!-- Certificate Tabs -->
                             <div class="certificate-tabs">
                                 <div class="certificate-tab active" data-cert="incorporation-main">
                                     <i class="fas fa-certificate mr-2"></i>
-                                    Main Certificate
+                                    <span class="en-content">Main Certificate</span>
+                                    <span class="zh-content" style="display: none;">主要證書</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="incorporation-academy">
                                     <i class="fas fa-graduation-cap mr-2"></i>
-                                    Academy Certificate
+                                    <span class="en-content">Academy Certificate</span>
+                                    <span class="zh-content" style="display: none;">學院證書</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="business1">
                                     <i class="fas fa-building mr-2"></i>
-                                    Business Registration (Market)
+                                    <span class="en-content">Registration (Market)</span>
+                                    <span class="zh-content" style="display: none;">登記 (市場)</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="business2">
                                     <i class="fas fa-film mr-2"></i>
-                                    Business Registration (Festival)
+                                    <span class="en-content">Registration (Festival)</span>
+                                    <span class="zh-content" style="display: none;">登記 (電影節)</span>
                                 </div>
                             </div>
 
@@ -1122,7 +1362,7 @@
                                 <div class="certificate-container" data-modal="incorporation-main">
                                     <div class="certificate-content">
                                         <div class="certificate-header">
-                                            <div class="certificate-title">公司註冊證明書</div>
+                                            <div class="certificate-title">批復註冊證明書</div>
                                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                                         </div>
                                         
@@ -1133,8 +1373,8 @@
                                             </div>
                                             
                                             <div class="text-center font-bold mb-6">
-                                                <div>公司註冊處</div>
-                                                <div>COMPANIES REGISTRY</div>
+                                                <div>註冊處</div>
+                                                <div>REGISTRY</div>
                                             </div>
                                             
                                             <div class="certificate-body">
@@ -1148,14 +1388,8 @@
                                                     </div>
                                                     
                                                     <div class="mb-4">
-                                                        <div>於本日根據香港法例第622章《公司條例》</div>
-                                                        <div>is this day incorporated in Hong Kong under the Companies Ordinance</div>
-                                                        <div>(Chapter 622 of the Laws of Hong Kong), and that this company is</div>
-                                                    </div>
-                                                    
-                                                    <div class="text-center font-bold mb-8">
-                                                        <div>有限公司。</div>
-                                                        <div>a limited company.</div>
+                                                        <div>於本日根據香港法例第622章</div>
+                                                        <div>is this day incorporated in Hong Kong</div>
                                                     </div>
                                                     
                                                     <div class="text-center mb-8">
@@ -1168,23 +1402,19 @@
                                             <div class="certificate-divider"></div>
                                             
                                             <div class="certificate-signature">
-                                                <div>香港特別行政區公司註冊處處長鄧婉雯</div>
+                                                <div>香港特別行政區註冊處處長鄧婉雯</div>
                                                 <div>Miss Helen TANG</div>
-                                                <div class="certificate-signature-name">Registrar of Companies</div>
+                                                <div class="certificate-signature-name">Registrar</div>
                                                 <div>Hong Kong Special Administrative Region</div>
-                                            </div>
-                                            
-                                            <div class="certificate-note">
-                                                註 Note：<br>
-                                                公司名稱獲公司註冊處註冊，並不表示獲授予該公司名稱或其任何部分的商標權或任何其他知識產權。<br>
-                                                Registration of a company name with the Companies Registry does not confer any trade mark rights or any other intellectual property rights in respect of the company name or any part thereof.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-center">
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="incorporation-main">
-                                        <i class="fas fa-expand mr-1"></i>View Full Certificate
+                                        <i class="fas fa-expand mr-1"></i>
+                                        <span class="en-content">View Full Certificate</span>
+                                        <span class="zh-content" style="display: none;">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1194,7 +1424,7 @@
                                 <div class="certificate-container" data-modal="incorporation-academy">
                                     <div class="certificate-content">
                                         <div class="certificate-header">
-                                            <div class="certificate-title">公司註冊證明書</div>
+                                            <div class="certificate-title">批復註冊證明書</div>
                                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                                         </div>
                                         
@@ -1205,8 +1435,8 @@
                                             </div>
                                             
                                             <div class="text-center font-bold mb-6">
-                                                <div>公司註冊處</div>
-                                                <div>COMPANIES REGISTRY</div>
+                                                <div>註冊處</div>
+                                                <div>REGISTRY</div>
                                             </div>
                                             
                                             <div class="certificate-body">
@@ -1219,14 +1449,8 @@
                                                     </div>
                                                     
                                                     <div class="mb-4">
-                                                        <div>於本日根據香港法例第622章《公司條例》</div>
-                                                        <div>is this day incorporated in Hong Kong under the Companies Ordinance</div>
-                                                        <div>(Chapter 622 of the Laws of Hong Kong), and that this company is</div>
-                                                    </div>
-                                                    
-                                                    <div class="text-center font-bold mb-8">
-                                                        <div>有限公司。</div>
-                                                        <div>a limited company.</div>
+                                                        <div>於本日根據香港法例第622章</div>
+                                                        <div>is this day incorporated in Hong Kong</div>
                                                     </div>
                                                     
                                                     <div class="text-center mb-8">
@@ -1239,32 +1463,33 @@
                                             <div class="certificate-divider"></div>
                                             
                                             <div class="certificate-signature">
-                                                <div>香港特別行政區公司註冊處處長楊善</div>
+                                                <div>香港特別行政區註冊處處長楊善</div>
                                                 <div>Ms Majestic YEUNG</div>
-                                                <div class="certificate-signature-name">Registrar of Companies</div>
+                                                <div class="certificate-signature-name">Registrar</div>
                                                 <div>Hong Kong Special Administrative Region</div>
-                                            </div>
-                                            
-                                            <div class="certificate-note">
-                                                註 Note：<br>
-                                                公司名稱獲公司註冊處註冊，並不表示獲授予該公司名稱或其任何部分的商標權或任何其他知識產權。<br>
-                                                Registration of a company name with the Companies Registry does not confer any trade mark rights or any other intellectual property rights in respect of the company name or any part thereof.
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-center">
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="incorporation-academy">
-                                        <i class="fas fa-expand mr-1"></i>View Full Certificate
+                                        <i class="fas fa-expand mr-1"></i>
+                                        <span class="en-content">View Full Certificate</span>
+                                        <span class="zh-content" style="display: none;">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Business Registration Certificate 1 (Market) -->
+                            <!-- Registration Certificate 1 (Market) -->
                             <div class="certificate-content-wrapper" id="business1">
                                 <div class="business-reg-cert" data-modal="business1">
                                     <div class="business-reg-header">
-                                        <div class="business-reg-title">BUSINESS REGISTRATION CERTIFICATE</div>
+                                        <div class="text-center mb-4">
+                                            <div class="text-red-600 font-bold text-lg">CR</div>
+                                        </div>
+                                        <div class="business-reg-title">登記條例 (第310章)</div>
+                                        <div class="text-sm mb-2">REGISTRATION ORDINANCE (Chapter 310)</div>
+                                        <div class="text-sm mb-4">(登記規例) REGISTRATION REGULATIONS</div>
                                         <div class="business-reg-number">Certificate No. 77536113-002-12-24-7</div>
                                     </div>
                                     
@@ -1276,16 +1501,9 @@
                                         </div>
                                         
                                         <div class="reg-field">
-                                            <div class="reg-field-label">業務 / 分行名稱 (Business/Branch Name)</div>
+                                            <div class="reg-field-label">名稱 (Name)</div>
                                             <div class="reg-field-value">香港人工智能電影市場</div>
                                             <div class="reg-field-value">HONG KONG ARTIFICIAL INTELLIGENCE FILM MARKET</div>
-                                        </div>
-                                        
-                                        <div class="reg-field">
-                                            <div class="reg-field-label">地址 (Address)</div>
-                                            <div class="reg-field-value">FLAT D07 8/F</div>
-                                            <div class="reg-field-value">KAI TAK FTY BUILDING</div>
-                                            <div class="reg-field-value">NO.99 KING FUK ST SANPOKONG KL</div>
                                         </div>
                                         
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1314,25 +1532,27 @@
                                             <div class="reg-field-label">登記證號碼 (Certificate No.)</div>
                                             <div class="reg-field-value">77536113-002-12-24-7</div>
                                         </div>
-                                        
-                                        <div class="reg-field">
-                                            <div class="reg-field-label">登記費及徵費 (Fee and Levy)</div>
-                                            <div class="reg-field-value">$80 (登記費 FEE = $80) (徵費 LEVY = $0)</div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-center">
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="business1">
-                                        <i class="fas fa-expand mr-1"></i>View Full Certificate
+                                        <i class="fas fa-expand mr-1"></i>
+                                        <span class="en-content">View Full Certificate</span>
+                                        <span class="zh-content" style="display: none;">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
 
-                            <!-- Business Registration Certificate 2 (Festival) -->
+                            <!-- Registration Certificate 2 (Festival) -->
                             <div class="certificate-content-wrapper" id="business2">
                                 <div class="business-reg-cert" data-modal="business2">
                                     <div class="business-reg-header">
-                                        <div class="business-reg-title">BUSINESS REGISTRATION CERTIFICATE</div>
+                                        <div class="text-center mb-4">
+                                            <div class="text-red-600 font-bold text-lg">CR</div>
+                                        </div>
+                                        <div class="business-reg-title">登記條例 (第310章)</div>
+                                        <div class="text-sm mb-2">REGISTRATION ORDINANCE (Chapter 310)</div>
+                                        <div class="text-sm mb-4">(登記規例) REGISTRATION REGULATIONS</div>
                                         <div class="business-reg-number">Certificate No. 77536113-001-12-24-6</div>
                                     </div>
                                     
@@ -1344,16 +1564,9 @@
                                         </div>
                                         
                                         <div class="reg-field">
-                                            <div class="reg-field-label">業務 / 分行名稱 (Business/Branch Name)</div>
+                                            <div class="reg-field-label">名稱 (Name)</div>
                                             <div class="reg-field-value">香港人工智能國際電影節協會</div>
                                             <div class="reg-field-value">HONG KONG ARTIFICIAL INTERNATIONAL FILM FESTIVAL ASSOCIATION</div>
-                                        </div>
-                                        
-                                        <div class="reg-field">
-                                            <div class="reg-field-label">地址 (Address)</div>
-                                            <div class="reg-field-value">RM D07 8/F</div>
-                                            <div class="reg-field-value">KAI TAK FTY BUILDING</div>
-                                            <div class="reg-field-value">NO. 99 KING FUK ST SANPOKONG KL</div>
                                         </div>
                                         
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1382,16 +1595,13 @@
                                             <div class="reg-field-label">登記證號碼 (Certificate No.)</div>
                                             <div class="reg-field-value">77536113-001-12-24-6</div>
                                         </div>
-                                        
-                                        <div class="reg-field">
-                                            <div class="reg-field-label">登記費及徵費 (Fee and Levy)</div>
-                                            <div class="reg-field-value">$80 (登記費 FEE = $80) (徵費 LEVY = $0)</div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-center">
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="business2">
-                                        <i class="fas fa-expand mr-1"></i>View Full Certificate
+                                        <i class="fas fa-expand mr-1"></i>
+                                        <span class="en-content">View Full Certificate</span>
+                                        <span class="zh-content" style="display: none;">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1406,38 +1616,49 @@
     <section id="contact" class="py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Contact Us</h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Contact Us</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">聯絡我們</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Reach out to the Hong Kong AI International Film Festival team for collaborations, submissions, or general inquiries.
+                </p>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                    聯繫香港AI國際電影節團隊，進行合作、提交作品或一般查詢。
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="card p-8 text-center">
                     <i class="fas fa-envelope text-4xl text-blue-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">General Inquiries</h3>
-                    <p class="text-gray-300 mb-4">General questions about the festival and ecosystem</p>
+                    <h3 class="text-xl font-bold mb-4 en-content">General Inquiries</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">一般查詢</h3>
+                    <p class="text-gray-300 mb-4 en-content">General questions about the festival and ecosystem</p>
+                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">關於電影節和生態系統的一般問題</p>
                     <a href="mailto:info@hkaiiff.org" class="text-blue-400 hover:text-white">info@hkaiiff.org</a>
                 </div>
                 
                 <div class="card p-8 text-center">
                     <i class="fas fa-film text-4xl text-purple-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Film Submissions</h3>
-                    <p class="text-gray-300 mb-4">Submit your AI-native films and creative works</p>
+                    <h3 class="text-xl font-bold mb-4 en-content">Film Submissions</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">電影提交</h3>
+                    <p class="text-gray-300 mb-4 en-content">Submit your AI-native films and creative works</p>
+                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">提交您的AI原生電影和創意作品</p>
                     <a href="mailto:submissions@hkaiiff.org" class="text-purple-400 hover:text-white">submissions@hkaiiff.org</a>
                 </div>
                 
                 <div class="card p-8 text-center">
                     <i class="fas fa-handshake text-4xl text-green-400 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-4">Partnerships</h3>
-                    <p class="text-gray-300 mb-4">Explore collaboration and partnership opportunities</p>
+                    <h3 class="text-xl font-bold mb-4 en-content">Partnerships</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">合作夥伴</h3>
+                    <p class="text-gray-300 mb-4 en-content">Explore collaboration and partnership opportunities</p>
+                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">探索合作與夥伴關係機會</p>
                     <a href="mailto:partnerships@hkaiiff.org" class="text-green-400 hover:text-white">partnerships@hkaiiff.org</a>
                 </div>
             </div>
             
             <div class="mt-16 text-center">
                 <div class="card p-8 inline-block">
-                    <h3 class="text-xl font-bold mb-4">Follow Our Journey</h3>
+                    <h3 class="text-xl font-bold mb-4 en-content">Follow Our Journey</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">關注我們的旅程</h3>
                     <div class="flex justify-center space-x-6">
                         <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-telegram"></i></a>
@@ -1455,8 +1676,11 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="logo-font mb-4">HKAIIFF</div>
-                    <p class="text-gray-400 mb-4">
+                    <p class="text-gray-400 mb-4 en-content">
                         Revolutionizing the film industry through AI innovation and blockchain technology to create new paradigms for global cinema.
+                    </p>
+                    <p class="text-gray-400 mb-4 zh-content" style="display: none;">
+                        通過AI創新和區塊鏈技術革新電影產業，為全球電影創造新範式。
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors duration-300"><i class="fab fa-twitter"></i></a>
@@ -1466,36 +1690,53 @@
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-400">Ecosystem</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400 en-content">Ecosystem</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400 zh-content" style="display: none;">生態系統</h3>
                     <ul class="space-y-2">
-                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300">Film Festival</a></li>
-                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300">AI Film Academy</a></li>
-                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300">AI Film Market</a></li>
-                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300">Submission Center</a></li>
+                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Festival</a></li>
+                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">電影節</a></li>
+                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Academy</a></li>
+                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">AI電影學院</a></li>
+                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Market</a></li>
+                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">AI電影市場</a></li>
+                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Submission Center</a></li>
+                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">提交中心</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-purple-400">Resources</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-purple-400 en-content">Resources</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-purple-400 zh-content" style="display: none;">資源</h3>
                     <ul class="space-y-2">
-                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300">Legal Documents</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">White Paper</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Technical Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Community Guidelines</a></li>
+                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Legal Documents</a></li>
+                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">法律文件</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">White Paper</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">白皮書</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Technical Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">技術文檔</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Community Guidelines</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">社區指南</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4 text-green-400">Contact</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-green-400 en-content">Contact</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-green-400 zh-content" style="display: none;">聯繫</h3>
                     <ul class="space-y-2">
-                        <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300">General Inquiries</a></li>
-                        <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300">Film Submissions</a></li>
-                        <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300">Partnerships</a></li>
-                        <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300">Legal Matters</a></li>
+                        <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">General Inquiries</a></li>
+                        <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">一般查詢</a></li>
+                        <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Submissions</a></li>
+                        <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">電影提交</a></li>
+                        <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Partnerships</a></li>
+                        <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">合作夥伴</a></li>
+                        <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Legal Matters</a></li>
+                        <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">法律事務</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-                <p>© 2025 Hong Kong Artificial Intelligence International Film Festival. All rights reserved.</p>
-                <p class="mt-2">Registered in Hong Kong SAR | Company No: 77536113 | Academy No: 77960839</p>
+                <p class="en-content">© 2025 Hong Kong Artificial Intelligence International Film Festival. All rights reserved.</p>
+                <p class="zh-content" style="display: none;">© 2025 香港人工智能國際電影節。保留所有權利。</p>
+                <p class="mt-2 en-content">Registered in Hong Kong SAR | Company No: 77536113 | Academy No: 77960839</p>
+                <p class="mt-2 zh-content" style="display: none;">在香港特別行政區註冊 | 公司編號: 77536113 | 學院編號: 77960839</p>
             </div>
         </div>
     </footer>
@@ -1510,7 +1751,7 @@
             <div class="certificate-container certificate-full-view">
                 <div class="certificate-content">
                     <div class="certificate-header">
-                        <div class="certificate-title">公司註冊證明書</div>
+                        <div class="certificate-title">批復註冊證明書</div>
                         <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                     </div>
                     
@@ -1521,12 +1762,12 @@
                         </div>
                         
                         <div class="text-center font-bold mb-8">
-                            <div class="text-xl">公司註冊處</div>
-                            <div class="text-lg">COMPANIES REGISTRY</div>
+                            <div class="text-xl">註冊處</div>
+                            <div class="text-lg">REGISTRY</div>
                         </div>
                         
                         <div class="text-center mb-10">
-                            <div class="certificate-title">公司註冊證明書</div>
+                            <div class="certificate-title">批復註冊證明書</div>
                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                         </div>
                         
@@ -1545,18 +1786,8 @@
                                 </div>
                                 
                                 <div class="mb-4 text-lg">
-                                    <div>於本日根據香港法例第622章《公司條例》</div>
-                                    <div>is this day incorporated in Hong Kong under the Companies Ordinance</div>
-                                </div>
-                                
-                                <div class="mb-4 text-lg">
-                                    <div>在香港成立為法團，此公司是一間</div>
-                                    <div>(Chapter 622 of the Laws of Hong Kong), and that this company is</div>
-                                </div>
-                                
-                                <div class="text-center font-bold mb-10">
-                                    <div class="text-xl">有限公司。</div>
-                                    <div class="text-xl">a limited company.</div>
+                                    <div>於本日根據香港法例第622章</div>
+                                    <div>is this day incorporated in Hong Kong</div>
                                 </div>
                                 
                                 <div class="text-center mb-10">
@@ -1569,16 +1800,10 @@
                         <div class="certificate-divider"></div>
                         
                         <div class="certificate-signature">
-                            <div class="text-lg">香港特別行政區公司註冊處處長鄧婉雯</div>
+                            <div class="text-lg">香港特別行政區註冊處處長鄧婉雯</div>
                             <div class="text-lg">Miss Helen TANG</div>
-                            <div class="certificate-signature-name">Registrar of Companies</div>
+                            <div class="certificate-signature-name">Registrar</div>
                             <div class="text-lg">Hong Kong Special Administrative Region</div>
-                        </div>
-                        
-                        <div class="certificate-note">
-                            註 Note：<br>
-                            公司名稱獲公司註冊處註冊，並不表示獲授予該公司名稱或其任何部分的商標權或任何其他知識產權。<br>
-                            Registration of a company name with the Companies Registry does not confer any trade mark rights or any other intellectual property rights in respect of the company name or any part thereof.
                         </div>
                     </div>
                 </div>
@@ -1595,7 +1820,7 @@
             <div class="certificate-container certificate-full-view">
                 <div class="certificate-content">
                     <div class="certificate-header">
-                        <div class="certificate-title">公司註冊證明書</div>
+                        <div class="certificate-title">批復註冊證明書</div>
                         <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                     </div>
                     
@@ -1606,12 +1831,12 @@
                         </div>
                         
                         <div class="text-center font-bold mb-8">
-                            <div class="text-xl">公司註冊處</div>
-                            <div class="text-lg">COMPANIES REGISTRY</div>
+                            <div class="text-xl">註冊處</div>
+                            <div class="text-lg">REGISTRY</div>
                         </div>
                         
                         <div class="text-center mb-10">
-                            <div class="certificate-title">公司註冊證明書</div>
+                            <div class="certificate-title">批復註冊證明書</div>
                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                         </div>
                         
@@ -1629,18 +1854,8 @@
                                 </div>
                                 
                                 <div class="mb-4 text-lg">
-                                    <div>於本日根據香港法例第622章《公司條例》</div>
-                                    <div>is this day incorporated in Hong Kong under the Companies Ordinance</div>
-                                </div>
-                                
-                                <div class="mb-4 text-lg">
-                                    <div>在香港成立為法團，此公司是一間</div>
-                                    <div>(Chapter 622 of the Laws of Hong Kong), and that this company is</div>
-                                </div>
-                                
-                                <div class="text-center font-bold mb-10">
-                                    <div class="text-xl">有限公司。</div>
-                                    <div class="text-xl">a limited company.</div>
+                                    <div>於本日根據香港法例第622章</div>
+                                    <div>is this day incorporated in Hong Kong</div>
                                 </div>
                                 
                                 <div class="text-center mb-10">
@@ -1653,16 +1868,10 @@
                         <div class="certificate-divider"></div>
                         
                         <div class="certificate-signature">
-                            <div class="text-lg">香港特別行政區公司註冊處處長楊善</div>
+                            <div class="text-lg">香港特別行政區註冊處處長楊善</div>
                             <div class="text-lg">Ms Majestic YEUNG</div>
-                            <div class="certificate-signature-name">Registrar of Companies</div>
+                            <div class="certificate-signature-name">Registrar</div>
                             <div class="text-lg">Hong Kong Special Administrative Region</div>
-                        </div>
-                        
-                        <div class="certificate-note">
-                            註 Note：<br>
-                            公司名稱獲公司註冊處註冊，並不表示獲授予該公司名稱或其任何部分的商標權或任何其他知識產權。<br>
-                            Registration of a company name with the Companies Registry does not confer any trade mark rights or any other intellectual property rights in respect of the company name or any part thereof.
                         </div>
                     </div>
                 </div>
@@ -1670,7 +1879,7 @@
         </div>
     </div>
 
-    <!-- Modal for Business Registration 1 -->
+    <!-- Modal for Registration 1 -->
     <div class="certificate-modal" id="business1Modal">
         <div class="certificate-modal-content">
             <div class="certificate-modal-close" data-close="business1">
@@ -1680,35 +1889,58 @@
                 <div class="business-reg-header">
                     <div class="text-center mb-4">
                         <div class="text-red-600 font-bold text-lg">CR</div>
-                        <div class="text-sm">公司註冊處</div>
-                        <div class="text-sm">COMPANIES REGISTRY</div>
                     </div>
-                    <div class="business-reg-title">商業登記條例 (第310章)</div>
-                    <div class="text-sm mb-2">BUSINESS REGISTRATION ORDINANCE (Chapter 310)</div>
-                    <div class="text-sm mb-4">(商業登記規例) BUSINESS REGISTRATION REGULATIONS</div>
+                    <div class="business-reg-title">登記條例 (第310章)</div>
+                    <div class="text-sm mb-2">REGISTRATION ORDINANCE (Chapter 310)</div>
+                    <div class="text-sm mb-4">(登記規例) REGISTRATION REGULATIONS</div>
                     <div class="business-reg-number">Certificate No. 77536113-002-12-24-7</div>
                 </div>
                 
                 <div class="business-reg-body">
                     <div class="reg-field">
-                        <div class="reg-field-label">登記費及徵費 (Fee and Levy)</div>
-                        <div class="reg-field-value">$80 (登記費 FEE = $80) (徵費 LEVY = $0)</div>
+                        <div class="reg-field-label">業務 / 法團所用名稱 (Name of Business/Corporation)</div>
+                        <div class="reg-field-value">香港人工智能國際電影節協會有限公司</div>
+                        <div class="reg-field-value">HONG KONG AI INTERNATIONAL FILM FESTIVAL LIMITED</div>
                     </div>
                     
-                    <div class="certificate-note mt-6">
-                        請注意下列（商業登記條例）的規定：<br>
-                        Please note the following requirements of the Business Registration Ordinance:<br><br>
-                        1. 第6(6)條規定任何業務獲發商業登記證或分行登記證，並不表示該業務或該業務的人或僱員於執行該業務的僱員已遵從有關的任何法律規定。<br>
-                        1. Section 6(6) provides that the issue of a business registration certificate or a branch registration certificate shall not be deemed to imply that the requirements of any law in relation to such business or to the persons carrying on the same or employed therein have been complied with.<br><br>
-                        2. 第12條規定各業務須將其有效的商業登記證或有效的分行登記證於每一營業地點展示。<br>
-                        2. Section 12 provides that valid business registration certificate or valid branch registration certificate shall be displayed at every address where business is carried on.
+                    <div class="reg-field">
+                        <div class="reg-field-label">名稱 (Name)</div>
+                        <div class="reg-field-value">香港人工智能電影市場</div>
+                        <div class="reg-field-value">HONG KONG ARTIFICIAL INTELLIGENCE FILM MARKET</div>
+                    </div>
+                    
+                    <div class="reg-field">
+                        <div class="reg-field-label">業務性質 (Nature of Business)</div>
+                        <div class="reg-field-value">人工智能算法，技術，產品和電影節及電影業相關的活動和產品</div>
+                    </div>
+                    
+                    <div class="reg-field">
+                        <div class="reg-field-label">法律地位 (Status)</div>
+                        <div class="reg-field-value">BODY CORPORATE</div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="reg-field">
+                            <div class="reg-field-label">生效日期 (Date of Commencement)</div>
+                            <div class="reg-field-value">22/01/2025</div>
+                        </div>
+                        
+                        <div class="reg-field">
+                            <div class="reg-field-label">屆滿日期 (Date of Expiry)</div>
+                            <div class="reg-field-value">30/12/2025</div>
+                        </div>
+                        
+                        <div class="reg-field">
+                            <div class="reg-field-label">登記證號碼 (Certificate No.)</div>
+                            <div class="reg-field-value">77536113-002-12-24-7</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal for Business Registration 2 -->
+    <!-- Modal for Registration 2 -->
     <div class="certificate-modal" id="business2Modal">
         <div class="certificate-modal-content">
             <div class="certificate-modal-close" data-close="business2">
@@ -1718,12 +1950,10 @@
                 <div class="business-reg-header">
                     <div class="text-center mb-4">
                         <div class="text-red-600 font-bold text-lg">CR</div>
-                        <div class="text-sm">公司註冊處</div>
-                        <div class="text-sm">COMPANIES REGISTRY</div>
                     </div>
-                    <div class="business-reg-title">商業登記條例 (第310章)</div>
-                    <div class="text-sm mb-2">BUSINESS REGISTRATION ORDINANCE (Chapter 310)</div>
-                    <div class="text-sm mb-4">(商業登記規例) BUSINESS REGISTRATION REGULATIONS</div>
+                    <div class="business-reg-title">登記條例 (第310章)</div>
+                    <div class="text-sm mb-2">REGISTRATION ORDINANCE (Chapter 310)</div>
+                    <div class="text-sm mb-4">(登記規例) REGISTRATION REGULATIONS</div>
                     <div class="business-reg-number">Certificate No. 77536113-001-12-24-6</div>
                 </div>
                 
@@ -1735,16 +1965,9 @@
                     </div>
                     
                     <div class="reg-field">
-                        <div class="reg-field-label">業務 / 分行名稱 (Business/Branch Name)</div>
+                        <div class="reg-field-label">名稱 (Name)</div>
                         <div class="reg-field-value">香港人工智能國際電影節協會</div>
                         <div class="reg-field-value">HONG KONG ARTIFICIAL INTERNATIONAL FILM FESTIVAL ASSOCIATION</div>
-                    </div>
-                    
-                    <div class="reg-field">
-                        <div class="reg-field-label">地址 (Address)</div>
-                        <div class="reg-field-value">RM D07 8/F</div>
-                        <div class="reg-field-value">KAI TAK FTY BUILDING</div>
-                        <div class="reg-field-value">NO. 99 KING FUK ST SANPOKONG KL</div>
                     </div>
                     
                     <div class="reg-field">
@@ -1772,11 +1995,6 @@
                             <div class="reg-field-label">登記證號碼 (Certificate No.)</div>
                             <div class="reg-field-value">77536113-001-12-24-6</div>
                         </div>
-                    </div>
-                    
-                    <div class="reg-field">
-                        <div class="reg-field-label">登記費及徵費 (Fee and Levy)</div>
-                        <div class="reg-field-value">$80 (登記費 FEE = $80) (徵費 LEVY = $0)</div>
                     </div>
                 </div>
             </div>
@@ -1908,6 +2126,67 @@
                 }
             });
         });
+        
+        // Language switcher functionality
+        const langSwitcherBtn = document.querySelector('.lang-switcher-btn');
+        const langSwitcherMenu = document.querySelector('.lang-switcher-menu');
+        const langOptions = document.querySelectorAll('.lang-option');
+        let currentLang = 'en';
+        
+        if (langSwitcherBtn && langSwitcherMenu) {
+            langSwitcherBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                langSwitcherMenu.classList.toggle('active');
+            });
+            
+            // Close language menu when clicking outside
+            document.addEventListener('click', () => {
+                langSwitcherMenu.classList.remove('active');
+            });
+            
+            // Language selection
+            langOptions.forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const selectedLang = option.getAttribute('data-lang');
+                    if (selectedLang !== currentLang) {
+                        currentLang = selectedLang;
+                        switchLanguage(selectedLang);
+                        
+                        // Update active language option
+                        langOptions.forEach(opt => opt.classList.remove('active'));
+                        option.classList.add('active');
+                        
+                        // Update button text
+                        const buttonText = langSwitcherBtn.querySelector('.en-content, .zh-content');
+                        if (buttonText) {
+                            if (selectedLang === 'en') {
+                                buttonText.textContent = 'English';
+                            } else {
+                                buttonText.textContent = '繁體中文';
+                            }
+                        }
+                        
+                        // Close menu
+                        langSwitcherMenu.classList.remove('active');
+                    }
+                });
+            });
+        }
+        
+        // Language switching function
+        function switchLanguage(lang) {
+            const enElements = document.querySelectorAll('.en-content');
+            const zhElements = document.querySelectorAll('.zh-content');
+            
+            if (lang === 'en') {
+                enElements.forEach(el => el.style.display = '');
+                zhElements.forEach(el => el.style.display = 'none');
+            } else {
+                enElements.forEach(el => el.style.display = 'none');
+                zhElements.forEach(el => el.style.display = '');
+            }
+        }
         
         // Add random data streams
         function createDataStreams() {
