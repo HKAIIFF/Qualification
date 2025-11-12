@@ -621,14 +621,17 @@
             font-weight: 600;
         }
 
+        /* 语言切换的CSS规则 */
         .zh-content {
             display: none;
         }
-        .zh-active .zh-content {
-            display: block !important;
+        
+        body.zh-active .zh-content {
+            display: block;
         }
-        .zh-active .en-content {
-            display: none !important;
+        
+        body.zh-active .en-content {
+            display: none;
         }
     </style>
 </head>
@@ -663,26 +666,26 @@
             </a>
             <div class="hidden md:flex space-x-8 desktop-nav">
                 <a href="#home" class="hover:text-blue-400 transition en-content">Home</a>
-                <a href="#home" class="hover:text-blue-400 transition zh-content" style="display: none;">首頁</a>
+                <a href="#home" class="hover:text-blue-400 transition zh-content">首頁</a>
                 <a href="#ecosystem" class="hover:text-blue-400 transition en-content">Ecosystem</a>
-                <a href="#ecosystem" class="hover:text-blue-400 transition zh-content" style="display: none;">生態系統</a>
+                <a href="#ecosystem" class="hover:text-blue-400 transition zh-content">生態系統</a>
                 <a href="#festival" class="hover:text-blue-400 transition en-content">Film Festival</a>
-                <a href="#festival" class="hover:text-blue-400 transition zh-content" style="display: none;">電影節</a>
+                <a href="#festival" class="hover:text-blue-400 transition zh-content">電影節</a>
                 <a href="#academy" class="hover:text-blue-400 transition en-content">Academy</a>
-                <a href="#academy" class="hover:text-blue-400 transition zh-content" style="display: none;">學院</a>
+                <a href="#academy" class="hover:text-blue-400 transition zh-content">學院</a>
                 <a href="#market" class="hover:text-blue-400 transition en-content">Market</a>
-                <a href="#market" class="hover:text-blue-400 transition zh-content" style="display: none;">市場</a>
+                <a href="#market" class="hover:text-blue-400 transition zh-content">市場</a>
                 <a href="#center" class="hover:text-blue-400 transition en-content">Submission Center</a>
-                <a href="#center" class="hover:text-blue-400 transition zh-content" style="display: none;">提交中心</a>
+                <a href="#center" class="hover:text-blue-400 transition zh-content">提交中心</a>
                 <a href="#certificates" class="hover:text-blue-400 transition en-content">Certificates</a>
-                <a href="#certificates" class="hover:text-blue-400 transition zh-content" style="display: none;">證書</a>
+                <a href="#certificates" class="hover:text-blue-400 transition zh-content">證書</a>
             </div>
             <div class="flex items-center space-x-4">
                 <div class="lang-switcher">
                     <button class="lang-switcher-btn">
                         <i class="fas fa-globe"></i>
                         <span class="en-content">English</span>
-                        <span class="zh-content" style="display: none;">English</span>
+                        <span class="zh-content">English</span>
                         <i class="fas fa-chevron-down text-xs"></i>
                     </button>
                     <div class="lang-switcher-menu">
@@ -695,7 +698,7 @@
                     </div>
                 </div>
                 <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm en-content">Contact Us</a>
-                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm zh-content" style="display: none;">聯絡我們</a>
+                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm zh-content">聯絡我們</a>
                 
                 <button class="md:hidden text-white mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
@@ -712,19 +715,19 @@
         
         <div class="mt-12 flex flex-col space-y-6">
             <a href="#home" class="text-xl hover:text-blue-400 transition en-content">Home</a>
-            <a href="#home" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">首頁</a>
+            <a href="#home" class="text-xl hover:text-blue-400 transition zh-content">首頁</a>
             <a href="#ecosystem" class="text-xl hover:text-blue-400 transition en-content">Ecosystem</a>
-            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">生態系統</a>
+            <a href="#ecosystem" class="text-xl hover:text-blue-400 transition zh-content">生態系統</a>
             <a href="#festival" class="text-xl hover:text-blue-400 transition en-content">Film Festival</a>
-            <a href="#festival" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">電影節</a>
+            <a href="#festival" class="text-xl hover:text-blue-400 transition zh-content">電影節</a>
             <a href="#academy" class="text-xl hover:text-blue-400 transition en-content">Academy</a>
-            <a href="#academy" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">學院</a>
+            <a href="#academy" class="text-xl hover:text-blue-400 transition zh-content">學院</a>
             <a href="#market" class="text-xl hover:text-blue-400 transition en-content">Market</a>
-            <a href="#market" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">市場</a>
+            <a href="#market" class="text-xl hover:text-blue-400 transition zh-content">市場</a>
             <a href="#center" class="text-xl hover:text-blue-400 transition en-content">Submission Center</a>
-            <a href="#center" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">提交中心</a>
+            <a href="#center" class="text-xl hover:text-blue-400 transition zh-content">提交中心</a>
             <a href="#certificates" class="text-xl hover:text-blue-400 transition en-content">Certificates</a>
-            <a href="#certificates" class="text-xl hover:text-blue-400 transition zh-content" style="display: none;">證書</a>
+            <a href="#certificates" class="text-xl hover:text-blue-400 transition zh-content">證書</a>
         </div>
     </div>
 
@@ -733,24 +736,24 @@
         <div class="container mx-auto px-4 hero-content">
             <div class="max-w-4xl">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 en-content">Hong Kong Artificial Intelligence<span class="gradient-text"> International Film Festival</span></h1>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 zh-content" style="display: none;">香港人工智能<span class="gradient-text">國際電影節</span></h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 zh-content">香港人工智能<span class="gradient-text">國際電影節</span></h1>
                 <p class="text-xl text-gray-300 mb-8 en-content">
                     Redefining film art and evaluation standards in the AI era. A revolutionary ecosystem integrating artificial intelligence with traditional filmmaking processes to create new paradigms for global cinema innovation.
                 </p>
-                <p class="text-xl text-gray-300 mb-8 zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 mb-8 zh-content">
                     在AI時代重新定義電影藝術與評價標準。革命性的生態系統，將人工智能與傳統電影製作流程相結合，為全球電影創新創造新範式。
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center en-content">
                         Explore Ecosystem
                     </a>
-                    <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center zh-content" style="display: none;">
+                    <a href="#ecosystem" class="btn-primary px-8 py-3 rounded-full font-medium text-center zh-content">
                         探索生態系統
                     </a>
                     <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center en-content">
                         View Certificates
                     </a>
-                    <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center zh-content" style="display: none;">
+                    <a href="#certificates" class="btn-secondary px-8 py-3 rounded-full font-medium text-center zh-content">
                         查看證書
                     </a>
                 </div>
@@ -763,11 +766,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Complete AI Film Ecosystem</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">完整AI電影生態系統</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">完整AI電影生態系統</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Four interconnected platforms collaborating to revolutionize the film industry through AI innovation, blockchain technology, and global collaboration.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     四個相互連接的平台，通過AI創新、區塊鏈技術和全球合作，共同革新電影產業。
                 </p>
             </div>
@@ -779,15 +782,15 @@
                         <i class="fas fa-trophy"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-blue-400 en-content">Film Festival</h3>
-                    <h3 class="text-xl font-bold mb-3 text-blue-400 zh-content" style="display: none;">電影節</h3>
+                    <h3 class="text-xl font-bold mb-3 text-blue-400 zh-content">電影節</h3>
                     <p class="text-gray-300 text-sm mb-4 en-content">
                         Global competition platform for AI-native films with innovative evaluation standards and mixed reality award ceremonies.
                     </p>
-                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                    <p class="text-gray-300 text-sm mb-4 zh-content">
                         面向AI原生電影的全球競賽平台，具有創新評價標準和混合現實頒獎典禮。
                     </p>
                     <a href="#festival" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
-                    <a href="#festival" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
+                    <a href="#festival" class="text-accent hover:text-white text-sm font-medium zh-content">了解更多 →</a>
                 </div>
                 
                 <!-- Academy Component -->
@@ -796,15 +799,15 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-purple-400 en-content">AI Film Academy</h3>
-                    <h3 class="text-xl font-bold mb-3 text-purple-400 zh-content" style="display: none;">AI電影學院</h3>
+                    <h3 class="text-xl font-bold mb-3 text-purple-400 zh-content">AI電影學院</h3>
                     <p class="text-gray-300 text-sm mb-4 en-content">
                         Educational platform offering comprehensive courses in AI filmmaking, blockchain technology, and creative innovation.
                     </p>
-                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                    <p class="text-gray-300 text-sm mb-4 zh-content">
                         提供AI電影製作、區塊鏈技術和創意創新全面課程的教育平台。
                     </p>
                     <a href="#academy" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
-                    <a href="#academy" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
+                    <a href="#academy" class="text-accent hover:text-white text-sm font-medium zh-content">了解更多 →</a>
                 </div>
                 
                 <!-- Market Component -->
@@ -813,15 +816,15 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-green-400 en-content">AI Film Market</h3>
-                    <h3 class="text-xl font-bold mb-3 text-green-400 zh-content" style="display: none;">AI電影市場</h3>
+                    <h3 class="text-xl font-bold mb-3 text-green-400 zh-content">AI電影市場</h3>
                     <p class="text-gray-300 text-sm mb-4 en-content">
                         Blockchain-based marketplace for film financing, production, distribution, and revenue sharing via smart contracts.
                     </p>
-                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                    <p class="text-gray-300 text-sm mb-4 zh-content">
                         基於區塊鏈的電影融資、製作、發行和通過智能合約進行收入分享的市場。
                     </p>
                     <a href="#market" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
-                    <a href="#market" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
+                    <a href="#market" class="text-accent hover:text-white text-sm font-medium zh-content">了解更多 →</a>
                 </div>
                 
                 <!-- Submission Center Component -->
@@ -830,15 +833,15 @@
                         <i class="fas fa-upload"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-orange-400 en-content">Submission Center</h3>
-                    <h3 class="text-xl font-bold mb-3 text-orange-400 zh-content" style="display: none;">提交中心</h3>
+                    <h3 class="text-xl font-bold mb-3 text-orange-400 zh-content">提交中心</h3>
                     <p class="text-gray-300 text-sm mb-4 en-content">
                         Global hub for AI-native content collection and distribution, connecting creators with worldwide audiences.
                     </p>
-                    <p class="text-gray-300 text-sm mb-4 zh-content" style="display: none;">
+                    <p class="text-gray-300 text-sm mb-4 zh-content">
                         AI原生內容收集和分發的全球中心，將創作者與全球觀眾連接起來。
                     </p>
                     <a href="#center" class="text-accent hover:text-white text-sm font-medium en-content">Learn more →</a>
-                    <a href="#center" class="text-accent hover:text-white text-sm font-medium zh-content" style="display: none;">了解更多 →</a>
+                    <a href="#center" class="text-accent hover:text-white text-sm font-medium zh-content">了解更多 →</a>
                 </div>
             </div>
         </div>
@@ -849,11 +852,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI International Film Festival</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI國際電影節</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">香港AI國際電影節</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     The world's first film festival dedicated exclusively to AI-native film production, establishing new standards for the era of AI cinema.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     世界上第一個專門致力於AI原生電影製作的電影節，為AI電影時代建立新標準。
                 </p>
             </div>
@@ -861,68 +864,68 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🎬 Revolutionary Approach</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🎬 革命性方法</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content">🎬 革命性方法</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-robot"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">AI-Native Focus</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI原生專注</h4>
+                            <h4 class="font-bold mb-2 zh-content">AI原生專注</h4>
                             <p class="text-sm text-gray-300 en-content">Dedicated to films created with AI as a core creative tool, not just a production aid.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">專注於將AI作為核心創意工具而非僅僅是製作輔助的電影。</p>
+                            <p class="text-sm text-gray-300 zh-content">專注於將AI作為核心創意工具而非僅僅是製作輔助的電影。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-cube"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">New Classification System</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">新分類系統</h4>
+                            <h4 class="font-bold mb-2 zh-content">新分類系統</h4>
                             <p class="text-sm text-gray-300 en-content">Innovative categories including AI-generated films, human-machine collaborations, and interactive AI experiences.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">創新類別包括AI生成電影、人機協作和互動AI體驗。</p>
+                            <p class="text-sm text-gray-300 zh-content">創新類別包括AI生成電影、人機協作和互動AI體驗。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-balance-scale"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Advanced Evaluation Criteria</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">高級評價標準</h4>
+                            <h4 class="font-bold mb-2 zh-content">高級評價標準</h4>
                             <p class="text-sm text-gray-300 en-content">Multidimensional assessment covering technological innovation, artistic achievement, and ethical considerations.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">多維度評估，涵蓋技術創新、藝術成就和倫理考量。</p>
+                            <p class="text-sm text-gray-300 zh-content">多維度評估，涵蓋技術創新、藝術成就和倫理考量。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🏆 Award Categories & Innovation</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🏆 獎項類別與創新</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content">🏆 獎項類別與創新</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-award"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Grand Prize Categories</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">大獎類別</h4>
+                            <h4 class="font-bold mb-2 zh-content">大獎類別</h4>
                             <p class="text-sm text-gray-300 en-content">Best AI-Generated Film, Best Human-Machine Collaboration, Technological Innovation Award, Ethical AI Achievement Award.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">最佳AI生成電影、最佳人機協作、技術創新獎、倫理AI成就獎。</p>
+                            <p class="text-sm text-gray-300 zh-content">最佳AI生成電影、最佳人機協作、技術創新獎、倫理AI成就獎。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-vr-cardboard"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Mixed Reality Ceremony</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">混合現實典禮</h4>
+                            <h4 class="font-bold mb-2 zh-content">混合現實典禮</h4>
                             <p class="text-sm text-gray-300 en-content">World's first mixed reality award ceremony combining physical venues with virtual spaces for global participation.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">世界首個混合現實頒獎典禮，將實體場館與虛擬空間結合，實現全球參與。</p>
+                            <p class="text-sm text-gray-300 zh-content">世界首個混合現實頒獎典禮，將實體場館與虛擬空間結合，實現全球參與。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Global Impact</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">全球影響</h4>
+                            <h4 class="font-bold mb-2 zh-content">全球影響</h4>
                             <p class="text-sm text-gray-300 en-content">Multicultural jury and global streaming capabilities ensuring international recognition and accessibility.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">多元文化評審團和全球流媒體能力，確保國際認可和可訪問性。</p>
+                            <p class="text-sm text-gray-300 zh-content">多元文化評審團和全球流媒體能力，確保國際認可和可訪問性。</p>
                         </div>
                     </div>
                 </div>
@@ -930,28 +933,28 @@
             
             <div class="card p-8">
                 <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">🎯 Core Values & Purpose</h3>
-                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">🎯 核心價值與目的</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content">🎯 核心價值與目的</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="text-center">
                         <i class="fas fa-lightbulb text-4xl text-blue-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Innovation Recognition</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創新認可</h4>
+                        <h4 class="font-bold mb-2 zh-content">創新認可</h4>
                         <p class="text-sm text-gray-300 en-content">Celebrate groundbreaking AI filmmaking techniques and creative breakthroughs pushing the boundaries of cinematic art.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">慶祝突破性的AI電影製作技術和創意突破，推動電影藝術的邊界。</p>
+                        <p class="text-sm text-gray-300 zh-content">慶祝突破性的AI電影製作技術和創意突破，推動電影藝術的邊界。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-users text-4xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Community Building</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">社區建設</h4>
+                        <h4 class="font-bold mb-2 zh-content">社區建設</h4>
                         <p class="text-sm text-gray-300 en-content">Foster a global community of AI filmmakers, technologists, and artists collectively pioneering cinema's future.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">培養全球AI電影製作者、技術專家和藝術家社區，共同開創電影的未來。</p>
+                        <p class="text-sm text-gray-300 zh-content">培養全球AI電影製作者、技術專家和藝術家社區，共同開創電影的未來。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-rocket text-4xl text-green-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Industry Evolution</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">產業演進</h4>
+                        <h4 class="font-bold mb-2 zh-content">產業演進</h4>
                         <p class="text-sm text-gray-300 en-content">Drive transformation of the film industry through AI applications, establishing new standards for creative excellence.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">通過AI應用推動電影產業轉型，為創意卓越建立新標準。</p>
+                        <p class="text-sm text-gray-300 zh-content">通過AI應用推動電影產業轉型，為創意卓越建立新標準。</p>
                     </div>
                 </div>
             </div>
@@ -963,11 +966,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI Film Academy</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI電影學院</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">香港AI電影學院</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     The world's first comprehensive educational platform dedicated to AI filmmaking and blockchain technology for creative industries.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     世界上第一個致力於AI電影製作和創意產業區塊鏈技術的綜合教育平台。
                 </p>
             </div>
@@ -975,68 +978,68 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">📚 Educational Excellence</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">📚 教育卓越</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content">📚 教育卓越</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">AI Filmmaking Mastery</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI電影製作精通</h4>
+                            <h4 class="font-bold mb-2 zh-content">AI電影製作精通</h4>
                             <p class="text-sm text-gray-300 en-content">Comprehensive curriculum covering AI tools, techniques, and creative processes for next-generation filmmaking.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">全面課程涵蓋AI工具、技術和創意流程，用於下一代電影製作。</p>
+                            <p class="text-sm text-gray-300 zh-content">全面課程涵蓋AI工具、技術和創意流程，用於下一代電影製作。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-link"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Blockchain Integration</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">區塊鏈整合</h4>
+                            <h4 class="font-bold mb-2 zh-content">區塊鏈整合</h4>
                             <p class="text-sm text-gray-300 en-content">Learn how blockchain technology revolutionizes film financing, distribution, and rights management.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">學習區塊鏈技術如何革新電影融資、發行和權利管理。</p>
+                            <p class="text-sm text-gray-300 zh-content">學習區塊鏈技術如何革新電影融資、發行和權利管理。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-certificate"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Industry Certification</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">行業認證</h4>
+                            <h4 class="font-bold mb-2 zh-content">行業認證</h4>
                             <p class="text-sm text-gray-300 en-content">Globally recognized certificates and credentials for AI film professionals and creative technologists.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">為AI電影專業人士和創意技術專家提供全球認可的證書和資格。</p>
+                            <p class="text-sm text-gray-300 zh-content">為AI電影專業人士和創意技術專家提供全球認可的證書和資格。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🎓 Learning Pathways</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🎓 學習路徑</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content">🎓 學習路徑</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-play-circle"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Beginner to Expert</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">從初學者到專家</h4>
+                            <h4 class="font-bold mb-2 zh-content">從初學者到專家</h4>
                             <p class="text-sm text-gray-300 en-content">Structured learning paths from foundational AI concepts to advanced filmmaking techniques and industry applications.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">從基礎AI概念到高級電影製作技術和行業應用的結構化學習路徑。</p>
+                            <p class="text-sm text-gray-300 zh-content">從基礎AI概念到高級電影製作技術和行業應用的結構化學習路徑。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Hands-On Projects</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">實踐項目</h4>
+                            <h4 class="font-bold mb-2 zh-content">實踐項目</h4>
                             <p class="text-sm text-gray-300 en-content">Real-world filmmaking projects using cutting-edge AI tools and blockchain platforms.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">使用尖端AI工具和區塊鏈平台的實際電影製作項目。</p>
+                            <p class="text-sm text-gray-300 zh-content">使用尖端AI工具和區塊鏈平台的實際電影製作項目。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-network-wired"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Industry Networking</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">行業網絡</h4>
+                            <h4 class="font-bold mb-2 zh-content">行業網絡</h4>
                             <p class="text-sm text-gray-300 en-content">Connect with filmmakers, technologists, and industry professionals through collaborative projects and events.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">通過合作項目和活動與電影製作者、技術專家和行業專業人士建立聯繫。</p>
+                            <p class="text-sm text-gray-300 zh-content">通過合作項目和活動與電影製作者、技術專家和行業專業人士建立聯繫。</p>
                         </div>
                     </div>
                 </div>
@@ -1044,35 +1047,35 @@
             
             <div class="card p-8">
                 <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">🎯 Core Functions & Value</h3>
-                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">🎯 核心功能與價值</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content">🎯 核心功能與價值</h3>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <i class="fas fa-user-graduate text-4xl text-blue-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Talent Development</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">人才培養</h4>
+                        <h4 class="font-bold mb-2 zh-content">人才培養</h4>
                         <p class="text-sm text-gray-300 en-content">Primary source of skilled professionals for the entire AI film ecosystem.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為整個AI電影生態系統提供熟練專業人才的主要來源。</p>
+                        <p class="text-sm text-gray-300 zh-content">為整個AI電影生態系統提供熟練專業人才的主要來源。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-flask text-4xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Innovation Hub</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創新中心</h4>
+                        <h4 class="font-bold mb-2 zh-content">創新中心</h4>
                         <p class="text-sm text-gray-300 en-content">Research and development center driving technological and creative breakthroughs.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">推動技術和創意突破的研究與開發中心。</p>
+                        <p class="text-sm text-gray-300 zh-content">推動技術和創意突破的研究與開發中心。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-database text-4xl text-green-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Knowledge Repository</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">知識庫</h4>
+                        <h4 class="font-bold mb-2 zh-content">知識庫</h4>
                         <p class="text-sm text-gray-300 en-content">Comprehensive resource library including AI filmmaking resources and best practices.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">全面的資源庫，包括AI電影製作資源和最佳實踐。</p>
+                        <p class="text-sm text-gray-300 zh-content">全面的資源庫，包括AI電影製作資源和最佳實踐。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-globe-americas text-4xl text-orange-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Global Standards</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">全球標準</h4>
+                        <h4 class="font-bold mb-2 zh-content">全球標準</h4>
                         <p class="text-sm text-gray-300 en-content">Establishing global standards for AI film education and professional certification.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為AI電影教育和專業認證建立全球標準。</p>
+                        <p class="text-sm text-gray-300 zh-content">為AI電影教育和專業認證建立全球標準。</p>
                     </div>
                 </div>
             </div>
@@ -1084,11 +1087,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI Film Market</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI電影市場</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">香港AI電影市場</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Revolutionary blockchain platform integrating AI technology with traditional filmmaking processes to create a decentralized, transparent, and efficient global film ecosystem.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     革命性的區塊鏈平台，將AI技術與傳統電影製作流程相結合，創建去中心化、透明和高效的全球電影生態系統。
                 </p>
             </div>
@@ -1096,68 +1099,68 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🔗 Blockchain Innovation</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🔗 區塊鏈創新</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content">🔗 區塊鏈創新</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-coins"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Smart Contract Financing</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">智能合約融資</h4>
+                            <h4 class="font-bold mb-2 zh-content">智能合約融資</h4>
                             <p class="text-sm text-gray-300 en-content">Automated, transparent financing mechanisms ensuring fair allocation of resources and profits.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">自動化、透明的融資機制，確保資源和利潤的公平分配。</p>
+                            <p class="text-sm text-gray-300 zh-content">自動化、透明的融資機制，確保資源和利潤的公平分配。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Copyright Protection</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">版權保護</h4>
+                            <h4 class="font-bold mb-2 zh-content">版權保護</h4>
                             <p class="text-sm text-gray-300 en-content">Immutable blockchain records securing ownership and licensing of creative assets.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">不可變的區塊鏈記錄，保護創意資產的所有權和許可。</p>
+                            <p class="text-sm text-gray-300 zh-content">不可變的區塊鏈記錄，保護創意資產的所有權和許可。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-chart-pie"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Transparent Revenue Sharing</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">透明收入分享</h4>
+                            <h4 class="font-bold mb-2 zh-content">透明收入分享</h4>
                             <p class="text-sm text-gray-300 en-content">Automated profit distribution based on predefined smart contracts and contribution tracking.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">基於預定義智能合約和貢獻跟踪的自動化利潤分配。</p>
+                            <p class="text-sm text-gray-300 zh-content">基於預定義智能合約和貢獻跟踪的自動化利潤分配。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🎬 AI-Driven Production</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🎬 AI驅動製作</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content">🎬 AI驅動製作</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-magic"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">AI Creation Tools</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">AI創作工具</h4>
+                            <h4 class="font-bold mb-2 zh-content">AI創作工具</h4>
                             <p class="text-sm text-gray-300 en-content">Integrated AI engines for script analysis, scene generation, character design, and post-production.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">集成AI引擎，用於劇本分析、場景生成、角色設計和後期製作。</p>
+                            <p class="text-sm text-gray-300 zh-content">集成AI引擎，用於劇本分析、場景生成、角色設計和後期製作。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-cogs"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Automated Workflows</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">自動化工作流程</h4>
+                            <h4 class="font-bold mb-2 zh-content">自動化工作流程</h4>
                             <p class="text-sm text-gray-300 en-content">Streamlined production processes with AI-assisted project management and resource allocation.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">簡化的生產流程，具有AI輔助項目管理和資源分配。</p>
+                            <p class="text-sm text-gray-300 zh-content">簡化的生產流程，具有AI輔助項目管理和資源分配。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-analytics"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Market Analysis</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">市場分析</h4>
+                            <h4 class="font-bold mb-2 zh-content">市場分析</h4>
                             <p class="text-sm text-gray-300 en-content">AI-powered market analysis and audience prediction for informed investment and distribution decisions.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">AI驅動的市場分析和觀眾預測，為投資和發行決策提供信息。</p>
+                            <p class="text-sm text-gray-300 zh-content">AI驅動的市場分析和觀眾預測，為投資和發行決策提供信息。</p>
                         </div>
                     </div>
                 </div>
@@ -1165,28 +1168,28 @@
             
             <div class="card p-8">
                 <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">💰 Market Value & Opportunities</h3>
-                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">💰 市場價值與機會</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content">💰 市場價值與機會</h3>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="text-center">
                         <i class="fas fa-dollar-sign text-4xl text-blue-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">$10B+ Market Potential</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">100億美元+市場潛力</h4>
+                        <h4 class="font-bold mb-2 zh-content">100億美元+市場潛力</h4>
                         <p class="text-sm text-gray-300 en-content">Targeting an emerging market valued at over $10 billion within 5 years through innovative solutions.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">通過創新解決方案，目標在5年內瞄準價值超過100億美元的新興市場。</p>
+                        <p class="text-sm text-gray-300 zh-content">通過創新解決方案，目標在5年內瞄準價值超過100億美元的新興市場。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-handshake text-4xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Global Partnerships</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">全球合作夥伴</h4>
+                        <h4 class="font-bold mb-2 zh-content">全球合作夥伴</h4>
                         <p class="text-sm text-gray-300 en-content">Strategic alliances with global production companies, distributors, and technology providers.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">與全球製作公司、發行商和技術提供商的戰略聯盟。</p>
+                        <p class="text-sm text-gray-300 zh-content">與全球製作公司、發行商和技術提供商的戰略聯盟。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-trending-up text-4xl text-green-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Investment Hub</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">投資中心</h4>
+                        <h4 class="font-bold mb-2 zh-content">投資中心</h4>
                         <p class="text-sm text-gray-300 en-content">Connecting East-West markets as Hong Kong's innovation hub serving the global AI film industry.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">作為香港創新中心連接東西市場，服務全球AI電影產業。</p>
+                        <p class="text-sm text-gray-300 zh-content">作為香港創新中心連接東西市場，服務全球AI電影產業。</p>
                     </div>
                 </div>
             </div>
@@ -1198,11 +1201,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Hong Kong AI International Film Festival Submission Center</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">香港AI國際電影節提交中心</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">香港AI國際電影節提交中心</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Global hub for AI-native film content collection and distribution, creating a two-way value flow platform connecting creators with worldwide audiences.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     AI原生電影內容收集和分發的全球中心，創建連接創作者與全球觀眾的雙向價值流平台。
                 </p>
             </div>
@@ -1210,68 +1213,68 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-blue-400 en-content">🌐 Global Distribution Network</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content" style="display: none;">🌐 全球分發網絡</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-blue-400 zh-content">🌐 全球分發網絡</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-upload"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Content Aggregation Hub</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">內容聚合中心</h4>
+                            <h4 class="font-bold mb-2 zh-content">內容聚合中心</h4>
                             <p class="text-sm text-gray-300 en-content">Centralized platform for discovering and curating high-quality AI-native film content from global creators.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">集中平台，用於發現和策劃來自全球創作者的高質量AI原生電影內容。</p>
+                            <p class="text-sm text-gray-300 zh-content">集中平台，用於發現和策劃來自全球創作者的高質量AI原生電影內容。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-broadcast-tower"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Multi-Platform Distribution</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">多平台分發</h4>
+                            <h4 class="font-bold mb-2 zh-content">多平台分發</h4>
                             <p class="text-sm text-gray-300 en-content">Comprehensive distribution network covering multiple platforms, channels, and global markets.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">全面的分發網絡，覆蓋多個平台、渠道和全球市場。</p>
+                            <p class="text-sm text-gray-300 zh-content">全面的分發網絡，覆蓋多個平台、渠道和全球市場。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-language"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Cultural Adaptation</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">文化適應</h4>
+                            <h4 class="font-bold mb-2 zh-content">文化適應</h4>
                             <p class="text-sm text-gray-300 en-content">Localization services including translation, cultural adaptation, and regional market optimization.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">本地化服務，包括翻譯、文化適應和區域市場優化。</p>
+                            <p class="text-sm text-gray-300 zh-content">本地化服務，包括翻譯、文化適應和區域市場優化。</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card p-8">
                     <h3 class="text-2xl font-bold mb-6 text-purple-400 en-content">🛠️ Professional Services</h3>
-                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content" style="display: none;">🛠️ 專業服務</h3>
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400 zh-content">🛠️ 專業服務</h3>
                     <div class="space-y-4">
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-consultation"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">End-to-End Support</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">端到端支持</h4>
+                            <h4 class="font-bold mb-2 zh-content">端到端支持</h4>
                             <p class="text-sm text-gray-300 en-content">Comprehensive services from creation consultation to commercial distribution and revenue optimization.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">從創作諮詢到商業分發和收入優化的全面服務。</p>
+                            <p class="text-sm text-gray-300 zh-content">從創作諮詢到商業分發和收入優化的全面服務。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-copyright"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Rights Management</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">權利管理</h4>
+                            <h4 class="font-bold mb-2 zh-content">權利管理</h4>
                             <p class="text-sm text-gray-300 en-content">Advanced copyright protection, licensing services, and intellectual property management solutions.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">高級版權保護、許可服務和知識產權管理解決方案。</p>
+                            <p class="text-sm text-gray-300 zh-content">高級版權保護、許可服務和知識產權管理解決方案。</p>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <i class="fas fa-ticket-alt"></i>
                             </div>
                             <h4 class="font-bold mb-2 en-content">Festival Integration</h4>
-                            <h4 class="font-bold mb-2 zh-content" style="display: none;">電影節整合</h4>
+                            <h4 class="font-bold mb-2 zh-content">電影節整合</h4>
                             <p class="text-sm text-gray-300 en-content">Simplified submission process for global film festivals and exhibition opportunities.</p>
-                            <p class="text-sm text-gray-300 zh-content" style="display: none;">簡化的全球電影節提交流程和展覽機會。</p>
+                            <p class="text-sm text-gray-300 zh-content">簡化的全球電影節提交流程和展覽機會。</p>
                         </div>
                     </div>
                 </div>
@@ -1279,35 +1282,35 @@
             
             <div class="card p-8">
                 <h3 class="text-2xl font-bold mb-6 text-green-400 en-content">📈 Market Growth & Value Creation</h3>
-                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content" style="display: none;">📈 市場增長與價值創造</h3>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 zh-content">📈 市場增長與價值創造</h3>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center">
                         <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">380% Market Growth</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">380%市場增長</h4>
+                        <h4 class="font-bold mb-2 zh-content">380%市場增長</h4>
                         <p class="text-sm text-gray-300 en-content">Global AI video market projected to grow from $61 million in 2024 to $380 million in 2025.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">全球AI視頻市場預計將從2024年的6100萬美元增長到2025年的3.8億美元。</p>
+                        <p class="text-sm text-gray-300 zh-content">全球AI視頻市場預計將從2024年的6100萬美元增長到2025年的3.8億美元。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-balance-scale text-4xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">8-10x ROI Target</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">8-10倍投資回報目標</h4>
+                        <h4 class="font-bold mb-2 zh-content">8-10倍投資回報目標</h4>
                         <p class="text-sm text-gray-300 en-content">Expected to achieve 8-10x return on investment within 10 years of operation.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">預計在運營10年內實現8-10倍的投資回報。</p>
+                        <p class="text-sm text-gray-300 zh-content">預計在運營10年內實現8-10倍的投資回報。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-users text-4xl text-green-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Creator Empowerment</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">創作者賦能</h4>
+                        <h4 class="font-bold mb-2 zh-content">創作者賦能</h4>
                         <p class="text-sm text-gray-300 en-content">Providing creators with global exposure, technical support, and diversified monetization models.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">為創作者提供全球曝光、技術支持和多元化的變現模式。</p>
+                        <p class="text-sm text-gray-300 zh-content">為創作者提供全球曝光、技術支持和多元化的變現模式。</p>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-eye text-4xl text-orange-400 mb-4"></i>
                         <h4 class="font-bold mb-2 en-content">Audience Experience</h4>
-                        <h4 class="font-bold mb-2 zh-content" style="display: none;">觀眾體驗</h4>
+                        <h4 class="font-bold mb-2 zh-content">觀眾體驗</h4>
                         <p class="text-sm text-gray-300 en-content">High-quality curated content with personalized recommendations and interactive viewing experiences.</p>
-                        <p class="text-sm text-gray-300 zh-content" style="display: none;">高質量策劃內容，具有個性化推薦和互動觀看體驗。</p>
+                        <p class="text-sm text-gray-300 zh-content">高質量策劃內容，具有個性化推薦和互動觀看體驗。</p>
                     </div>
                 </div>
             </div>
@@ -1319,11 +1322,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Legal Documents & Certificates</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">法律文件與證書</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">法律文件與證書</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Official incorporation and business registration certificates for the Hong Kong AI International Film Festival ecosystem.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     香港AI國際電影節生態系統的官方註冊和商業登記證書。
                 </p>
             </div>
@@ -1332,34 +1335,34 @@
             <div class="card rounded-xl overflow-hidden cyber-border mb-12">
                 <div class="p-8">
                     <h3 class="text-2xl font-bold mb-6 en-content">📋 Official Registration</h3>
-                    <h3 class="text-2xl font-bold mb-6 zh-content" style="display: none;">📋 官方註冊</h3>
+                    <h3 class="text-2xl font-bold mb-6 zh-content">📋 官方註冊</h3>
                     <div class="grid grid-cols-1 gap-8">
                         <!-- Certificate Section -->
                         <div class="certificate-section">
                             <h4 class="text-lg font-bold mb-4 text-blue-400 en-content">Certificate of Incorporation</h4>
-                            <h4 class="text-lg font-bold mb-4 text-blue-400 zh-content" style="display: none;">註冊證明書</h4>
+                            <h4 class="text-lg font-bold mb-4 text-blue-400 zh-content">註冊證明書</h4>
                             
                             <!-- Certificate Tabs -->
                             <div class="certificate-tabs">
                                 <div class="certificate-tab active" data-cert="incorporation-main">
                                     <i class="fas fa-certificate mr-2"></i>
                                     <span class="en-content">Main Certificate</span>
-                                    <span class="zh-content" style="display: none;">主要證書</span>
+                                    <span class="zh-content">主要證書</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="incorporation-academy">
                                     <i class="fas fa-graduation-cap mr-2"></i>
                                     <span class="en-content">Academy Certificate</span>
-                                    <span class="zh-content" style="display: none;">學院證書</span>
+                                    <span class="zh-content">學院證書</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="business1">
                                     <i class="fas fa-building mr-2"></i>
                                     <span class="en-content">Registration (Market)</span>
-                                    <span class="zh-content" style="display: none;">登記 (市場)</span>
+                                    <span class="zh-content">登記 (市場)</span>
                                 </div>
                                 <div class="certificate-tab" data-cert="business2">
                                     <i class="fas fa-film mr-2"></i>
                                     <span class="en-content">Registration (Festival)</span>
-                                    <span class="zh-content" style="display: none;">登記 (電影節)</span>
+                                    <span class="zh-content">登記 (電影節)</span>
                                 </div>
                             </div>
 
@@ -1420,7 +1423,7 @@
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="incorporation-main">
                                         <i class="fas fa-expand mr-1"></i>
                                         <span class="en-content">View Full Certificate</span>
-                                        <span class="zh-content" style="display: none;">查看完整證書</span>
+                                        <span class="zh-content">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1481,7 +1484,7 @@
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="incorporation-academy">
                                         <i class="fas fa-expand mr-1"></i>
                                         <span class="en-content">View Full Certificate</span>
-                                        <span class="zh-content" style="display: none;">查看完整證書</span>
+                                        <span class="zh-content">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1544,7 +1547,7 @@
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="business1">
                                         <i class="fas fa-expand mr-1"></i>
                                         <span class="en-content">View Full Certificate</span>
-                                        <span class="zh-content" style="display: none;">查看完整證書</span>
+                                        <span class="zh-content">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1607,7 +1610,7 @@
                                     <button class="btn-primary px-6 py-2 rounded-full text-sm" data-modal-btn="business2">
                                         <i class="fas fa-expand mr-1"></i>
                                         <span class="en-content">View Full Certificate</span>
-                                        <span class="zh-content" style="display: none;">查看完整證書</span>
+                                        <span class="zh-content">查看完整證書</span>
                                     </button>
                                 </div>
                             </div>
@@ -1623,11 +1626,11 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center en-content">Contact Us</h2>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content" style="display: none;">聯絡我們</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center zh-content">聯絡我們</h2>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto en-content">
                     Reach out to the Hong Kong AI International Film Festival team for collaborations, submissions, or general inquiries.
                 </p>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content" style="display: none;">
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto zh-content">
                     聯繫香港AI國際電影節團隊，進行合作、提交作品或一般查詢。
                 </p>
             </div>
@@ -1636,27 +1639,27 @@
                 <div class="card p-8 text-center">
                     <i class="fas fa-envelope text-4xl text-blue-400 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4 en-content">General Inquiries</h3>
-                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">一般查詢</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content">一般查詢</h3>
                     <p class="text-gray-300 mb-4 en-content">General questions about the festival and ecosystem</p>
-                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">關於電影節和生態系統的一般問題</p>
+                    <p class="text-gray-300 mb-4 zh-content">關於電影節和生態系統的一般問題</p>
                     <a href="mailto:info@hkaiiff.org" class="text-blue-400 hover:text-white">info@hkaiiff.org</a>
                 </div>
                 
                 <div class="card p-8 text-center">
                     <i class="fas fa-film text-4xl text-purple-400 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4 en-content">Film Submissions</h3>
-                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">電影提交</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content">電影提交</h3>
                     <p class="text-gray-300 mb-4 en-content">Submit your AI-native films and creative works</p>
-                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">提交您的AI原生電影和創意作品</p>
+                    <p class="text-gray-300 mb-4 zh-content">提交您的AI原生電影和創意作品</p>
                     <a href="mailto:submissions@hkaiiff.org" class="text-purple-400 hover:text-white">submissions@hkaiiff.org</a>
                 </div>
                 
                 <div class="card p-8 text-center">
                     <i class="fas fa-handshake text-4xl text-green-400 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4 en-content">Partnerships</h3>
-                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">合作夥伴</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content">合作夥伴</h3>
                     <p class="text-gray-300 mb-4 en-content">Explore collaboration and partnership opportunities</p>
-                    <p class="text-gray-300 mb-4 zh-content" style="display: none;">探索合作與夥伴關係機會</p>
+                    <p class="text-gray-300 mb-4 zh-content">探索合作與夥伴關係機會</p>
                     <a href="mailto:partnerships@hkaiiff.org" class="text-green-400 hover:text-white">partnerships@hkaiiff.org</a>
                 </div>
             </div>
@@ -1664,7 +1667,7 @@
             <div class="mt-16 text-center">
                 <div class="card p-8 inline-block">
                     <h3 class="text-xl font-bold mb-4 en-content">Follow Our Journey</h3>
-                    <h3 class="text-xl font-bold mb-4 zh-content" style="display: none;">關注我們的旅程</h3>
+                    <h3 class="text-xl font-bold mb-4 zh-content">關注我們的旅程</h3>
                     <div class="flex justify-center space-x-6">
                         <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl"><i class="fab fa-telegram"></i></a>
@@ -1685,7 +1688,7 @@
                     <p class="text-gray-400 mb-4 en-content">
                         Revolutionizing the film industry through AI innovation and blockchain technology to create new paradigms for global cinema.
                     </p>
-                    <p class="text-gray-400 mb-4 zh-content" style="display: none;">
+                    <p class="text-gray-400 mb-4 zh-content">
                         通過AI創新和區塊鏈技術革新電影產業，為全球電影創造新範式。
                     </p>
                     <div class="flex space-x-4">
@@ -1697,52 +1700,52 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-blue-400 en-content">Ecosystem</h3>
-                    <h3 class="text-lg font-semibold mb-4 text-blue-400 zh-content" style="display: none;">生態系統</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-blue-400 zh-content">生態系統</h3>
                     <ul class="space-y-2">
                         <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Festival</a></li>
-                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">電影節</a></li>
+                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">電影節</a></li>
                         <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Academy</a></li>
-                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">AI電影學院</a></li>
+                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影學院</a></li>
                         <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Market</a></li>
-                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">AI電影市場</a></li>
+                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影市場</a></li>
                         <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Submission Center</a></li>
-                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">提交中心</a></li>
+                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">提交中心</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-purple-400 en-content">Resources</h3>
-                    <h3 class="text-lg font-semibold mb-4 text-purple-400 zh-content" style="display: none;">資源</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-purple-400 zh-content">資源</h3>
                     <ul class="space-y-2">
                         <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Legal Documents</a></li>
-                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">法律文件</a></li>
+                        <li><a href="#certificates" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">法律文件</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">White Paper</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">白皮書</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">白皮書</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Technical Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">技術文檔</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">技術文檔</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Community Guidelines</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">社區指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">社區指南</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-green-400 en-content">Contact</h3>
-                    <h3 class="text-lg font-semibold mb-4 text-green-400 zh-content" style="display: none;">聯繫</h3>
+                    <h3 class="text-lg font-semibold mb-4 text-green-400 zh-content">聯繫</h3>
                     <ul class="space-y-2">
                         <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">General Inquiries</a></li>
-                        <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">一般查詢</a></li>
+                        <li><a href="mailto:info@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">一般查詢</a></li>
                         <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Submissions</a></li>
-                        <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">電影提交</a></li>
+                        <li><a href="mailto:submissions@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">電影提交</a></li>
                         <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Partnerships</a></li>
-                        <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">合作夥伴</a></li>
+                        <li><a href="mailto:partnerships@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">合作夥伴</a></li>
                         <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Legal Matters</a></li>
-                        <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content" style="display: none;">法律事務</a></li>
+                        <li><a href="mailto:legal@hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">法律事務</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
                 <p class="en-content">© 2025 Hong Kong Artificial Intelligence International Film Festival. All rights reserved.</p>
-                <p class="zh-content" style="display: none;">© 2025 香港人工智能國際電影節。保留所有權利。</p>
+                <p class="zh-content">© 2025 香港人工智能國際電影節。保留所有權利。</p>
                 <p class="mt-2 en-content">Registered in Hong Kong SAR | Company No: 77536113 | Academy No: 77960839</p>
-                <p class="mt-2 zh-content" style="display: none;">在香港特別行政區註冊 | 公司編號: 77536113 | 學院編號: 77960839</p>
+                <p class="mt-2 zh-content">在香港特別行政區註冊 | 公司編號: 77536113 | 學院編號: 77960839</p>
             </div>
         </div>
     </footer>
@@ -2008,354 +2011,221 @@
     </div>
 
     <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        
-        if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
-            mobileMenuBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileMenu.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            mobileMenuClose.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = 'auto';
-            });
-            
-            // Close mobile menu when clicking on links
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open');
-                    document.body.style.overflow = 'auto';
-                });
-            });
-        }
-        
-        // Certificate tabs functionality
-        const certificateTabs = document.querySelectorAll('.certificate-tab');
-        const certificateWrappers = document.querySelectorAll('.certificate-content-wrapper');
-        
-        certificateTabs.forEach(tab => {
-            tab.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const targetCert = tab.getAttribute('data-cert');
-                
-                // Remove active class from all tabs and wrappers
-                certificateTabs.forEach(t => t.classList.remove('active'));
-                certificateWrappers.forEach(w => w.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding wrapper
-                tab.classList.add('active');
-                const targetWrapper = document.getElementById(targetCert);
-                if (targetWrapper) {
-                    targetWrapper.classList.add('active');
-                }
-            });
-        });
-        
-        // Certificate modal functionality
-        const modals = document.querySelectorAll('.certificate-modal');
-        const modalBtns = document.querySelectorAll('[data-modal-btn]');
-        const modalCloseBtns = document.querySelectorAll('[data-close]');
-        
-        modalBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const modalId = btn.getAttribute('data-modal-btn') + 'Modal';
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-        
-        modalCloseBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const modalId = btn.getAttribute('data-close') + 'Modal';
-                const modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-        
-        // Close modal when clicking outside
-        modals.forEach(modal => {
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-        
-        // Escape key to close modals
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                modals.forEach(modal => {
-                    if (modal.style.display === 'flex') {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (mobileMenu && mobileMenu.classList.contains('open')) {
-                        mobileMenu.classList.remove('open');
-                        document.body.style.overflow = 'auto';
-                    }
-                }
-            });
-        });
-        
-        // Language switcher functionality
-        const langSwitcherBtn = document.querySelector('.lang-switcher-btn');
-        const langSwitcherMenu = document.querySelector('.lang-switcher-menu');
-        const langOptions = document.querySelectorAll('.lang-option');
-        let currentLang = 'en';
-        
-        if (langSwitcherBtn && langSwitcherMenu) {
-            langSwitcherBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                langSwitcherMenu.classList.toggle('active');
-            });
-            
-            // Close language menu when clicking outside
-            document.addEventListener('click', () => {
-                langSwitcherMenu.classList.remove('active');
-            });
-            
-            // Language selection
-            langOptions.forEach(option => {
-                option.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const selectedLang = option.getAttribute('data-lang');
-                    if (selectedLang !== currentLang) {
-                        currentLang = selectedLang;
-                        switchLanguage(selectedLang);
-                        
-                        // Update active language option
-                        langOptions.forEach(opt => opt.classList.remove('active'));
-                        option.classList.add('active');
-                        
-                        // Update button text
-                        const buttonText = langSwitcherBtn.querySelector('.en-content, .zh-content');
-                        if (buttonText) {
-                            if (selectedLang === 'en') {
-                                buttonText.textContent = 'English';
-                            } else {
-                                buttonText.textContent = '繁體中文';
-                            }
-                        }
-                        
-                        // Close menu
-                        langSwitcherMenu.classList.remove('active');
-                    }
-                });
-            });
-        }
-        
-        // Language switching function
-        function switchLanguage(lang) {
-            const enElements = document.querySelectorAll('.en-content');
-            const zhElements = document.querySelectorAll('.zh-content');
-            
-            if (lang === 'en') {
-                enElements.forEach(el => el.style.display = '');
-                zhElements.forEach(el => el.style.display = 'none');
-            } else {
-                enElements.forEach(el => el.style.display = 'none');
-                zhElements.forEach(el => el.style.display = '');
-            }
-        }
-        
-        // Add random data streams
-        function createDataStreams() {
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    const stream = document.createElement('div');
-                    stream.className = 'data-stream';
-                    stream.style.left = Math.random() * 100 + '%';
-                    stream.style.animationDelay = Math.random() * 2 + 's';
-                    document.body.appendChild(stream);
-                    
-                    // Remove after animation
-                    setTimeout(() => {
-                        if (stream.parentNode) {
-                            stream.remove();
-                        }
-                    }, 4000);
-                }, i * 3000);
-            }
-        }
-        
-        // Navbar transparency on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (navbar) {
-                if (window.scrollY > 100) {
-                    navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
-                } else {
-                    navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
-                }
-            }
-        });
-        
-        // Initialize
+        // 语言切换功能
         document.addEventListener('DOMContentLoaded', function() {
-            // Start data streams
-            createDataStreams();
-            setInterval(createDataStreams, 15000);
+            const langSwitcherBtn = document.querySelector('.lang-switcher-btn');
+            const langSwitcherMenu = document.querySelector('.lang-switcher-menu');
+            const langOptions = document.querySelectorAll('.lang-option');
             
-            // Add loading animation to cards
-            const cards = document.querySelectorAll('.card, .ecosystem-card');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+            // 语言切换菜单显示/隐藏
+            if (langSwitcherBtn && langSwitcherMenu) {
+                langSwitcherBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langSwitcherMenu.classList.toggle('active');
+                });
+                
+                // 点击页面其他地方关闭语言菜单
+                document.addEventListener('click', function() {
+                    langSwitcherMenu.classList.remove('active');
+                });
+                
+                // 防止点击语言菜单内部时关闭菜单
+                langSwitcherMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            // 语言切换
+            langOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // 更新活动语言选项
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 切换语言
+                    if (lang === 'zh') {
+                        document.body.classList.add('zh-active');
+                        // 更新按钮文本
+                        const enSpan = langSwitcherBtn.querySelector('.en-content');
+                        const zhSpan = langSwitcherBtn.querySelector('.zh-content');
+                        if (enSpan && zhSpan) {
+                            enSpan.style.display = 'none';
+                            zhSpan.style.display = 'inline';
+                            zhSpan.textContent = '繁體中文';
+                        }
+                    } else {
+                        document.body.classList.remove('zh-active');
+                        // 更新按钮文本
+                        const enSpan = langSwitcherBtn.querySelector('.en-content');
+                        const zhSpan = langSwitcherBtn.querySelector('.zh-content');
+                        if (enSpan && zhSpan) {
+                            enSpan.style.display = 'inline';
+                            zhSpan.style.display = 'none';
+                            enSpan.textContent = 'English';
+                        }
+                    }
+                    
+                    // 关闭语言菜单
+                    langSwitcherMenu.classList.remove('active');
+                    
+                    // 保存语言偏好
+                    localStorage.setItem('selectedLang', lang);
+                });
+            });
+            
+            // 初始化语言设置
+            const savedLang = localStorage.getItem('selectedLang') || 'en';
+            if (savedLang === 'zh') {
+                document.body.classList.add('zh-active');
+                langOptions.forEach(opt => {
+                    if (opt.getAttribute('data-lang') === 'zh') {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
                     }
                 });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
+                // 更新按钮文本
+                const enSpan = langSwitcherBtn.querySelector('.en-content');
+                const zhSpan = langSwitcherBtn.querySelector('.zh-content');
+                if (enSpan && zhSpan) {
+                    enSpan.style.display = 'none';
+                    zhSpan.style.display = 'inline';
+                    zhSpan.textContent = '繁體中文';
+                }
+            }
         });
-    </script>
-    <script>
+        
+        // 移动菜单功能
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileMenuClose = document.querySelector('.mobile-menu-close');
-            // Select all links in the mobile menu, including those inside zh-content/en-content
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a'); 
-            const langSwitcherBtn = document.querySelector('.lang-switcher-btn');
-            const langSwitcherMenu = document.querySelector('.lang-switcher-menu');
-            const langOptions = document.querySelectorAll('.lang-option');
-            const body = document.body;
-
-            // 1. Mobile Menu Toggle
-            if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+            
+            // 打开移动菜单
+            if (mobileMenuBtn && mobileMenu) {
                 mobileMenuBtn.addEventListener('click', function() {
                     mobileMenu.classList.add('open');
+                    document.body.style.overflow = 'hidden';
                 });
-
+            }
+            
+            // 关闭移动菜单
+            if (mobileMenuClose && mobileMenu) {
                 mobileMenuClose.addEventListener('click', function() {
                     mobileMenu.classList.remove('open');
-                });
-
-                // Close menu on link click and ensure navigation works
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        // Prevent default link behavior if needed, but for simple anchor links, it's fine
-                        // e.preventDefault(); 
-                        mobileMenu.classList.remove('open');
-                        // Optional: Smooth scroll to the target section
-                        const targetId = link.getAttribute('href');
-                        if (targetId && targetId.startsWith('#')) {
-                            document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
-                        }
-                    });
+                    document.body.style.overflow = 'auto';
                 });
             }
-
-            // 2. Language Switcher Toggle
-            if (langSwitcherBtn && langSwitcherMenu) {
-                langSwitcherBtn.addEventListener('click', function(event) {
-                    event.stopPropagation();
-                    langSwitcherMenu.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(event) {
-                    // Close the menu if click is outside the button and the menu
-                    if (!langSwitcherBtn.contains(event.target) && !langSwitcherMenu.contains(event.target)) {
-                        langSwitcherMenu.classList.remove('active');
-                    }
-                });
-            }
-
-            // 3. Language Switching Logic
-            function setLanguage(lang) {
-                // Update body class
-                if (lang === 'zh') {
-                    body.classList.add('zh-active');
-                } else {
-                    body.classList.remove('zh-active');
-                }
-
-                // Update active option in menu
-                langOptions.forEach(option => {
-                    option.classList.remove('active');
-                    if (option.getAttribute('data-lang') === lang) {
-                        option.classList.add('active');
-                    }
-                });
-
-                // Update button text
-                const enSpan = langSwitcherBtn.querySelector('.en-content');
-                const zhSpan = langSwitcherBtn.querySelector('.zh-content');
-                
-                if (enSpan && zhSpan) {
-                    if (lang === 'zh') {
-                        // When in Chinese mode, the button should display "繁體中文"
-                        enSpan.style.display = 'none';
-                        zhSpan.style.display = 'block';
-                        zhSpan.textContent = '繁體中文';
-                    } else {
-                        // When in English mode, the button should display "English"
-                        enSpan.style.display = 'block';
-                        zhSpan.style.display = 'none';
-                        enSpan.textContent = 'English';
-                    }
-                }
-                
-                // Store preference (optional, but good practice)
-                localStorage.setItem('selectedLang', lang);
-            }
-
-            langOptions.forEach(option => {
-                option.addEventListener('click', function() {
-                    const lang = this.getAttribute('data-lang');
-                    setLanguage(lang);
-                    langSwitcherMenu.classList.remove('active');
+            
+            // 点击移动菜单链接后关闭菜单
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
                 });
             });
-
-            // Initialize language: Default to 'en' if no preference is stored
-            const initialLang = localStorage.getItem('selectedLang') || 'en';
-            setLanguage(initialLang);
+        });
+        
+        // 平滑滚动
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // 证书标签切换
+        document.addEventListener('DOMContentLoaded', function() {
+            const certificateTabs = document.querySelectorAll('.certificate-tab');
+            const certificateWrappers = document.querySelectorAll('.certificate-content-wrapper');
+            
+            certificateTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const targetCert = this.getAttribute('data-cert');
+                    
+                    // 移除所有活动标签和内容
+                    certificateTabs.forEach(t => t.classList.remove('active'));
+                    certificateWrappers.forEach(w => w.classList.remove('active'));
+                    
+                    // 激活当前标签和内容
+                    this.classList.add('active');
+                    const targetWrapper = document.getElementById(targetCert);
+                    if (targetWrapper) {
+                        targetWrapper.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        // 证书模态框功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalBtns = document.querySelectorAll('[data-modal-btn]');
+            const modals = document.querySelectorAll('.certificate-modal');
+            const closeBtns = document.querySelectorAll('[data-close]');
+            
+            // 打开模态框
+            modalBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-modal-btn') + 'Modal';
+                    const modal = document.getElementById(modalId);
+                    
+                    if (modal) {
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // 关闭模态框
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-close') + 'Modal';
+                    const modal = document.getElementById(modalId);
+                    
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // 点击模态框外部关闭
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+            
+            // ESC键关闭模态框
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.style.display === 'flex') {
+                            modal.style.display = 'none';
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                }
+            });
         });
     </script>
 </body>
