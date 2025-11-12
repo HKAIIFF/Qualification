@@ -624,6 +624,12 @@
         .zh-content {
             display: none;
         }
+        .zh-active .zh-content {
+            display: block !important;
+        }
+        .zh-active .en-content {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -1362,7 +1368,7 @@
                                 <div class="certificate-container" data-modal="incorporation-main">
                                     <div class="certificate-content">
                                         <div class="certificate-header">
-                                            <div class="certificate-title">批復註冊證明書</div>
+                                            <div class="certificate-title">註冊證明書</div>
                                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                                         </div>
                                         
@@ -1424,7 +1430,7 @@
                                 <div class="certificate-container" data-modal="incorporation-academy">
                                     <div class="certificate-content">
                                         <div class="certificate-header">
-                                            <div class="certificate-title">批復註冊證明書</div>
+                                            <div class="certificate-title">註冊證明書</div>
                                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                                         </div>
                                         
@@ -1751,7 +1757,7 @@
             <div class="certificate-container certificate-full-view">
                 <div class="certificate-content">
                     <div class="certificate-header">
-                        <div class="certificate-title">批復註冊證明書</div>
+                        <div class="certificate-title">註冊證明書</div>
                         <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                     </div>
                     
@@ -1767,7 +1773,7 @@
                         </div>
                         
                         <div class="text-center mb-10">
-                            <div class="certificate-title">批復註冊證明書</div>
+                            <div class="certificate-title">註冊證明書</div>
                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                         </div>
                         
@@ -1820,7 +1826,7 @@
             <div class="certificate-container certificate-full-view">
                 <div class="certificate-content">
                     <div class="certificate-header">
-                        <div class="certificate-title">批復註冊證明書</div>
+                        <div class="certificate-title">註冊證明書</div>
                         <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                     </div>
                     
@@ -1836,7 +1842,7 @@
                         </div>
                         
                         <div class="text-center mb-10">
-                            <div class="certificate-title">批復註冊證明書</div>
+                            <div class="certificate-title">註冊證明書</div>
                             <div class="certificate-subtitle">CERTIFICATE OF INCORPORATION</div>
                         </div>
                         
@@ -2246,6 +2252,110 @@
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            // Select all links in the mobile menu, including those inside zh-content/en-content
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a'); 
+            const langSwitcherBtn = document.querySelector('.lang-switcher-btn');
+            const langSwitcherMenu = document.querySelector('.lang-switcher-menu');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const body = document.body;
+
+            // 1. Mobile Menu Toggle
+            if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('open');
+                });
+
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                });
+
+                // Close menu on link click and ensure navigation works
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        // Prevent default link behavior if needed, but for simple anchor links, it's fine
+                        // e.preventDefault(); 
+                        mobileMenu.classList.remove('open');
+                        // Optional: Smooth scroll to the target section
+                        const targetId = link.getAttribute('href');
+                        if (targetId && targetId.startsWith('#')) {
+                            document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                });
+            }
+
+            // 2. Language Switcher Toggle
+            if (langSwitcherBtn && langSwitcherMenu) {
+                langSwitcherBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    langSwitcherMenu.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    // Close the menu if click is outside the button and the menu
+                    if (!langSwitcherBtn.contains(event.target) && !langSwitcherMenu.contains(event.target)) {
+                        langSwitcherMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // 3. Language Switching Logic
+            function setLanguage(lang) {
+                // Update body class
+                if (lang === 'zh') {
+                    body.classList.add('zh-active');
+                } else {
+                    body.classList.remove('zh-active');
+                }
+
+                // Update active option in menu
+                langOptions.forEach(option => {
+                    option.classList.remove('active');
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    }
+                });
+
+                // Update button text
+                const enSpan = langSwitcherBtn.querySelector('.en-content');
+                const zhSpan = langSwitcherBtn.querySelector('.zh-content');
+                
+                if (enSpan && zhSpan) {
+                    if (lang === 'zh') {
+                        // When in Chinese mode, the button should display "繁體中文"
+                        enSpan.style.display = 'none';
+                        zhSpan.style.display = 'block';
+                        zhSpan.textContent = '繁體中文';
+                    } else {
+                        // When in English mode, the button should display "English"
+                        enSpan.style.display = 'block';
+                        zhSpan.style.display = 'none';
+                        enSpan.textContent = 'English';
+                    }
+                }
+                
+                // Store preference (optional, but good practice)
+                localStorage.setItem('selectedLang', lang);
+            }
+
+            langOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                    langSwitcherMenu.classList.remove('active');
+                });
+            });
+
+            // Initialize language: Default to 'en' if no preference is stored
+            const initialLang = localStorage.getItem('selectedLang') || 'en';
+            setLanguage(initialLang);
         });
     </script>
 </body>
