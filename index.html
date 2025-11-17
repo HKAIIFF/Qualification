@@ -697,8 +697,6 @@
                         </div>
                     </div>
                 </div>
-                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm en-content">Contact Us</a>
-                <a href="#contact" class="btn-primary px-6 py-2 rounded-full text-sm zh-content">聯絡我們</a>
                 
                 <button class="md:hidden text-white mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
@@ -1702,14 +1700,14 @@
                     <h3 class="text-lg font-semibold mb-4 text-blue-400 en-content">Ecosystem</h3>
                     <h3 class="text-lg font-semibold mb-4 text-blue-400 zh-content">生態系統</h3>
                     <ul class="space-y-2">
-                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Festival</a></li>
-                        <li><a href="#festival" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">電影節</a></li>
-                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Academy</a></li>
-                        <li><a href="#academy" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影學院</a></li>
-                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Market</a></li>
-                        <li><a href="#market" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影市場</a></li>
-                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Submission Center</a></li>
-                        <li><a href="#center" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">提交中心</a></li>
+                        <li><a href="http://www.hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Film Festival</a></li>
+                        <li><a href="http://www.hkaiiff.org" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">電影節</a></li>
+                        <li><a href="http://www.hkaifa.academy" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Academy</a></li>
+                        <li><a href="http://www.hkaifa.academy" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影學院</a></li>
+                        <li><a href="http://www.aif.market" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">AI Film Market</a></li>
+                        <li><a href="http://www.aif.market" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">AI電影市場</a></li>
+                        <li><a href="http://www.aif.center" class="text-gray-400 hover:text-white transition-colors duration-300 en-content">Submission Center</a></li>
+                        <li><a href="http://www.aif.center" class="text-gray-400 hover:text-white transition-colors duration-300 zh-content">提交中心</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2107,7 +2105,10 @@
             // 打开移动菜单
             if (mobileMenuBtn && mobileMenu) {
                 mobileMenuBtn.addEventListener('click', function() {
-                    mobileMenu.classList.add('open');
+                    mobileMenu.style.display = 'block';
+                    setTimeout(() => {
+                        mobileMenu.classList.add('open');
+                    }, 10);
                     document.body.style.overflow = 'hidden';
                 });
             }
@@ -2116,6 +2117,9 @@
             if (mobileMenuClose && mobileMenu) {
                 mobileMenuClose.addEventListener('click', function() {
                     mobileMenu.classList.remove('open');
+                    setTimeout(() => {
+                        mobileMenu.style.display = 'none';
+                    }, 300);
                     document.body.style.overflow = 'auto';
                 });
             }
@@ -2124,6 +2128,9 @@
             mobileMenuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     mobileMenu.classList.remove('open');
+                    setTimeout(() => {
+                        mobileMenu.style.display = 'none';
+                    }, 300);
                     document.body.style.overflow = 'auto';
                 });
             });
